@@ -30,13 +30,13 @@ class Model(nn.Module):
         self.conv2 = Conv1D(32, 64, kernel_size=3)
         self.pool1 = nn.MaxPool1d(kernel_size=2, stride=2)
 
-        self.conv3 = Conv1D(96, 128, kernel_size=3)
+        self.conv3 = Conv1D(64, 128, kernel_size=3)
         self.conv4 = Conv1D(128, 256, kernel_size=3)
         self.pool2 = nn.MaxPool1d(kernel_size=2, stride=2)
 
         self.output_layer = nn.Sequential(
             nn.Dropout(0.5),
-            nn.Linear(3072, 1),
+            nn.Linear(2048, 1),
             nn.Sigmoid())
 
     def forward(self, x):

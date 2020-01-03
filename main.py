@@ -19,8 +19,8 @@ from models.cnn import concat_convnext7, \
     nin_convnet13, \
     concat_convnet7, \
     concat_convnet5, \
-    vggnet7, \
-    resnet7, vggnet5, vggnet3
+    resnet7, \
+    vggnet7, vggnet5, vggnet3
 
 
 def ml_models_test(model, times, ratio):
@@ -49,13 +49,13 @@ def cnn_test(model, times, step, ratio):
 
 if __name__ == '__main__':
     # ML Model Sota : RandomForestClassifier
-    # acc, max, min = ml_models_test(model=XGBClassifier, times=10, ratio=0.8)
+    # test_acc, test_max, test_min = ml_models_test(model=XGBClassifier, times=10, ratio=0.8)
 
     # CNN Model Sota : Group ConvNet 8Layers 4Groups
     train_acc, train_max, train_min, \
     test_acc, test_max, test_min, \
     best_acc, best_max, best_min = \
-        cnn_test(model=vggnet3, times=10, step=30000, ratio=0.8)
+        cnn_test(model=vggnet7, times=10, step=30000, ratio=0.8)
     print('FINAL TRAIN AVG ACCURACY : ', train_acc, ' MAX : ', train_max, ' MIN : ', train_min)
     print('FINAL TEST AVG ACCURACY : ', test_acc, ' MAX : ', test_max, ' MIN : ', test_min)
     print('FINAL BEST AVG ACCURACY : ', best_acc, ' MAX : ', best_max, ' MIN : ', best_min)

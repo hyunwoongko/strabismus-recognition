@@ -41,8 +41,6 @@ performance of the model.*
 
 ### *3.1. Traditional Machine Learning Models Experiements*
 <br>
-I try 100 Times
-
 
 |Model|Minimum Acc|Average Acc|
 |:---:|:---:|:---:|
@@ -54,7 +52,7 @@ I try 100 Times
 |Ada Boost|0.6296|0.7296|
 |Random Forest|0.7037|0.8037|
 |Gradient Boosting|0.6666|0.7629|
-|XGBoost | | |
+|XGBoost|0.6666|0.7777|
 |Gaussian Naive Bayes|0.3703|0.5037|
 |Bernoulli Naive Bayes|0.2962|0.5111|
 |K Nearest Neighbors|0.6296|0.7074|

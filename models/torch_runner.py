@@ -24,8 +24,8 @@ def run(model, ratio, step):
     best = 0
     model.apply(initialize_weights)
     pre = Preprocessor(sequence_size=size)
-    normal = pre.load('C:\\Users\\User\\Github\\Strabismus\\data\\processed\\normal\\', label=0)
-    abnormal = pre.load('C:\\Users\\User\\Github\\Strabismus\\data\\processed\\abnormal\\', label=1)
+    normal = pre.load('C:\\Users\\User\\Github\\Strabismus Recognition\\data\\processed\\normal\\', label=0)
+    abnormal = pre.load('C:\\Users\\User\\Github\\Strabismus Recognition\\data\\processed\\abnormal\\', label=1)
 
     spliterator = DataSpliterator(ratio=ratio)
     train, test = spliterator.split(normal, abnormal)

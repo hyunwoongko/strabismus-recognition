@@ -51,7 +51,7 @@ def draw(step):
 
 
 def draw_average(step):
-    for i in range(1, step+1):
+    for i in range(1, step + 1):
         train = read('./result/train_acc_{}.txt'.format(step))
         test = read('./result/test_acc_{}.txt'.format(step))
         plt.plot(train, 'b', label='train acc')
@@ -75,5 +75,11 @@ def draw_average(step):
         plt.show()
 
 
+def draw_all(_from, _to):
+    for i in range(_from, _to):
+        draw(step=i)
+
+
 if __name__ == '__main__':
-    draw(step=5)
+    draw_all(1, 11)
+    # draw(6)
