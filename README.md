@@ -8,11 +8,7 @@
 <br><br><br>
 
 ![img](http://morancore.utah.edu/wp-content/uploads/2017/08/hu_assessment_003.jpg)
-*Strabismus is expressed in various types, and according to eye movement, it is classified into esotropia, exotropia, hypertropia and hypotropia. Currently, in ophthalmology, ophthalmologists diagnose the strabismus with the naked eye, but it is very difficult to diagnose strabismus unless a strabismus specialist. However, not all hospitals have strabismus specialists, so many ophthalmologists are currently struggling with strabismus diagnosis.*
-<br><br><br>
-
-![img](https://lilianweng.github.io/lil-log/assets/images/transformer.png)
-*So our goal is to develop software that automatically diagnoses strabismus. We are receiving data from some ophthalmologists and are thinking about using deep learning to solve this problem. We will experiment with various models such as MLP, RNN, GRU, LSTM, CNN, LSTM-CNN, Transformer and so on. and if all models do not perform well, we will construct a new model.*
+*Strabismus is expressed in various types, and according to eye movement, it is classified into esotropia, exotropia, hypertropia and hypotropia. Currently, in ophthalmology, ophthalmologists diagnose the strabismus with the naked eye, but it is very difficult to diagnose strabismus unless a strabismus specialist. However, not all hospitals have strabismus specialists, so many ophthalmologists are currently struggling with strabismus diagnosis. So our goal is to develop software that automatically diagnoses strabismus. We are receiving data from some ophthalmologists and are thinking about using deep learning to solve this problem. We will experiment with various models such as MLP, RNN, GRU, LSTM, CNN, LSTM-CNN, Transformer and so on. and if all models do not perform well, we will construct a new model.*
 <br><br><br>
 
 ##  2. *Development environment*
@@ -71,7 +67,7 @@ to Gradient Boosting or Random Forest. (About 76-77% accuracy)
 |Model|Size|Params|Minimum Acc|Average Acc|
 |:---:|:---:|:---:|:---:|:---:|
 |MLP_256_5Layer|1.45MB|368,385|0.55|0.7275|
-|MLP_256_10Layer|2.67MB|699,905|||
+|MLP_256_10Layer|2.67MB|699,905|0.35|0.4925|
 |MLP_256_15Layer|4.06MB|1,031,425|||
 |MLP_256_20Layer|5.37MB|1,362,945|||
 |MLP_512_5Layer|5.41MB|1,392,129|||
@@ -84,18 +80,20 @@ to Gradient Boosting or Random Forest. (About 76-77% accuracy)
 |MLP_1024_20Layer|81.46MB|21,180,417|||
 
 #### 3.2.1 Residual MLP
-|RESMLP_256_5Layer|1.45MB|368,385|||
-|RESMLP_256_10Layer|2.67MB|699,905|||
-|RESMLP_256_15Layer|2.67MB|699,905|||
-|RESMLP_256_20Layer|2.67MB|699,905|||
-|RESMLP_512_5Layer|2.67MB|1,392,129|||
-|RESMLP_512_10Layer|2.67MB|1,392,129|||
-|RESMLP_512_15Layer|2.67MB|1,392,129|||
-|RESMLP_512_20Layer|2.67MB|1,392,129|||
-|RESMLP_1024_5Layer|2.67MB|1,392,129|||
-|RESMLP_1024_10Layer|2.67MB|1,392,129|||
-|RESMLP_1024_15Layer|2.67MB|1,392,129|||
-|RESMLP_1024_20Layer|2.67MB|1,392,129|||
+|Model|Size|Params|Minimum Acc|Average Acc|
+|:---:|:---:|:---:|:---:|:---:|
+|RES_MLP_256_5Layer|1.45MB|368,385|0.55|0.7275|
+|RES_MLP_256_10Layer|2.67MB|699,905|||
+|RES_MLP_256_15Layer|4.06MB|1,031,425|||
+|RES_MLP_256_20Layer|5.37MB|1,362,945|||
+|RES_MLP_512_5Layer|5.41MB|1,392,129|||
+|RES_MLP_512_10Layer|10.52MB|2,710,529|||
+|RES_MLP_512_15Layer|15.62MB|4,028,929|||
+|RES_MLP_512_20Layer|20.73MB|5,347,329|||
+|RES_MLP_1024_5Layer|20.82MB|5,405,697|||
+|RES_MLP_1024_10Layer|41.03MB|10,663,937|||
+|RES_MLP_1024_15Layer|61.25MB|15,922,177|||
+|RES_MLP_1024_20Layer|81.46MB|21,180,417|||
 
 
 
