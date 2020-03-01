@@ -12,6 +12,9 @@ from utils.transformation import Transformation
 
 trial = 0
 
+def get_lr(optimizer):
+    for param_group in optimizer.param_groups:
+        return param_group['lr']
 
 def initialize_weights(m):
     if hasattr(m, 'weight') and m.weight.dim() > 1:
@@ -36,6 +39,11 @@ def run(model, ratio, step):
     opt = torch.optim.Adam(params=model.parameters(), lr=init_lr, weight_decay=weight_decay)
     criterion = nn.BCELoss()
 
+    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer=opt,
+                                                     verbose=True,
+                                                     factor=factor,
+                                                     patience=patience)
+
     model.train()
     train_accs, test_accs, train_losses, test_losses = [], [], [], []
     for i in range(step + 1):
@@ -49,6 +57,7 @@ def run(model, ratio, step):
         opt.step()
         torch.nn.utils.clip_grad_norm_(model.parameters(), clip)
         train_err = error.item()
+
         if i % record_per_step == 0:
 
             train_losses.append(train_err)
@@ -78,6 +87,13 @@ def run(model, ratio, step):
             if test_acc > best:
                 best = test_acc
 
+            if i > warmup:
+                scheduler.step(test_err)
+                lr = get_lr(opt)
+                if lr < 1e-7:
+                    break
+                    # early stopping
+
             f = open('./result/train_acc_{}.txt'.format(trial), 'w')
             f.write(str(train_accs))
             f.close()
@@ -96,7 +112,7 @@ def run(model, ratio, step):
 
             print(
                 'step : {0} , train_error : {1} , test_error : {2}, train_acc : {3}, valid_acc : {4} , best_valid_acc : {5}'
-                .format(i, round(train_err, 5), round(test_err, 5), round(train_acc, 5), round(test_acc, 5),
-                        round(best, 5)))
+                    .format(i, round(train_err, 5), round(test_err, 5), round(train_acc, 5), round(test_acc, 5),
+                            round(best, 5)))
 
     return train_acc, test_acc, best

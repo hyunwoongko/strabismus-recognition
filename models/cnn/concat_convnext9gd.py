@@ -10,9 +10,9 @@ from torch import nn
 
 class Conv1D(nn.Module):
 
-    def __init__(self, _in, _out, kernel_size):
+    def __init__(self, _in, _out, kernel_size, group):
         super(Conv1D, self).__init__()
-        self.conv = nn.Conv1d(_in, _out, kernel_size=kernel_size, padding=kernel_size // 2, groups=2)
+        self.conv = nn.Conv1d(_in, _out, kernel_size=kernel_size, padding=kernel_size // 2, groups=group)
         self.batch_norm = nn.BatchNorm1d(_out)
         self.relu = nn.ReLU()
 
@@ -28,17 +28,21 @@ class Model(nn.Module):
     def __init__(self):
         super(Model, self).__init__()
 
-        self.conv1 = Conv1D(4, 32, kernel_size=5)
-        self.conv2 = Conv1D(32, 64, kernel_size=3)
+        self.conv1 = Conv1D(4, 32, 3, 2)
+        self.conv2 = Conv1D(32, 64, 3, 2)
         self.pool1 = nn.MaxPool1d(kernel_size=2, stride=2)
 
-        self.conv3 = Conv1D(96, 128, kernel_size=3)
-        self.conv4 = Conv1D(128, 256, kernel_size=3)
+        self.conv3 = Conv1D(96, 128, 3, 4)
+        self.conv4 = Conv1D(128, 256, 3, 4)
         self.pool2 = nn.MaxPool1d(kernel_size=2, stride=2)
 
-        self.conv5 = Conv1D(384, 512, kernel_size=3)
-        self.conv6 = Conv1D(512, 1024, kernel_size=3)
+        self.conv5 = Conv1D(384, 512, 3, 8)
+        self.conv6 = Conv1D(512, 1024, 3, 8)
         self.pool3 = nn.MaxPool1d(kernel_size=2, stride=2)
+
+        self.conv7 = Conv1D(1536, 1536, 3, 16)
+        self.conv8 = Conv1D(1536, 1536, 3, 16)
+        self.pool4 = nn.MaxPool1d(kernel_size=2, stride=2)
 
         self.output_layer = nn.Sequential(
             nn.Dropout(0.5),
@@ -61,6 +65,11 @@ class Model(nn.Module):
         _x = self.conv6(x)
         x = torch.cat([x, _x], dim=1)
         x = self.pool3(x)
+
+        x = self.conv7(x)
+        _x = self.conv8(x)
+        x = torch.cat([x, _x], dim=1)
+        x = self.pool4(x)
 
         x = x.view(b, -1)
         x = self.output_layer(x)

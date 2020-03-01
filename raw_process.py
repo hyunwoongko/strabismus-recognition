@@ -10,7 +10,7 @@ import torch
 
 
 def raw_file_process():
-    raw_path = "C:\\Users\\User\\Github\\Strabismus\\data\\raw\\"
+    raw_path = "C:\\Users\\User\\Github\\Strabismus Recognition\\data\\raw\\"
     normal = raw_path + "normal\\"
     abnormal = raw_path + "abnormal\\"
     transform(normal)
@@ -21,7 +21,8 @@ def transform(path):
     for file_name in os.listdir(path):
         if '__init__' in file_name: continue
         data = pd.read_csv(path + file_name)
-        data = data.loc[data['MEDIA_ID'] == 1]
+        data = data.loc[data['MEDIA_ID'] == 0]
+        print(file_name)
         extracted = torch.tensor([data.loc[:, "LPCX"],
                                   data.loc[:, "LPCY"],
                                   data.loc[:, "RPCX"],

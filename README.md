@@ -30,9 +30,9 @@
 ![image](https://user-images.githubusercontent.com/38183241/70560563-2d915900-1bcc-11ea-8dfd-b1f908dfdd67.png)
 
 *Random cross validation was conducted for the experiment. 
-Firstly, we ramdomly select 94 patients' data (70%) 
-from a total of 135 patients and proceed model training. 
-After that, 40 patients' data (30%) that have not been trained are selected for diagnosis. 
+Firstly, we ramdomly select 158 patients' data (80%) 
+from a total of 198 patients and proceed model training. 
+After that, 40 patients' data (20%) that have not been trained are selected for diagnosis. 
 In each experiment, we create and experiment with a total of 10 new models, 
 and evaluate the minimum and average accuracy of the 10 models as the 
 performance of the model.* 
@@ -44,24 +44,67 @@ performance of the model.*
 
 |Model|Minimum Acc|Average Acc|
 |:---:|:---:|:---:|
-|SVM|0.4074|0.4703|
-|NuSVM|0.4444|0.6407|
-|LinearSVM|0.5185|0.6148|
-|Decision Tree|0.5185|0.6814|
-|Extra Tree|0.6666|0.7333|
-|Ada Boost|0.6296|0.7296|
-|Random Forest|0.7037|0.8037|
-|Gradient Boosting|0.6666|0.7629|
-|XGBoost|0.6666|0.7777|
-|Gaussian Naive Bayes|0.3703|0.5037|
-|Bernoulli Naive Bayes|0.2962|0.5111|
+|SVM|0.3750|0.5590|
+|NuSVM|0.5250|0.6954|
+|LinearSVM|0.5250|0.6944|
+|Decision Tree|0.4750|0.7060|
+|Extra Tree|0.5750|0.7144|
+|Ada Boost|0.5750|0.7204|
+|Random Forest|0.6250|0.7669|
+|Gradient Boosting|0.6500|0.7785|
+|XGBoost|0.675|0.7769|
+|Gaussian Naive Bayes|0.3750|0.5215|
+|Bernoulli Naive Bayes|0.4500|0.5815|
 |K Nearest Neighbors|0.6296|0.7074|
-|MLP (iter = 20000)|0.4444|0.6962|
 
+Experimental results from traditional machine learning models. 
+Even with the data added, the performance of the ensemble models 
+(Bagging & Boosting) is the highest. In addition, we experimented 
+with the XGBoost model, which shows performance similar 
+to Gradient Boosting or Random Forest. (About 76-77% accuracy)
 <br><br>
 
 
-### *3.2. 1D Convolutional Neural Networks Experiements*
+### *3.2. Multi Layer Perceptron Experiements*
+
+#### 3.2.1 Normal MLP
+|Model|Size|Params|Minimum Acc|Average Acc|
+|:---:|:---:|:---:|:---:|:---:|
+|MLP_256_5Layer|1.45MB|368,385|0.55|0.7275|
+|MLP_256_10Layer|2.67MB|699,905|||
+|MLP_256_15Layer|4.06MB|1,031,425|||
+|MLP_256_20Layer|5.37MB|1,362,945|||
+|MLP_512_5Layer|5.41MB|1,392,129|||
+|MLP_512_10Layer|10.52MB|2,710,529|||
+|MLP_512_15Layer|15.62MB|4,028,929|||
+|MLP_512_20Layer|20.73MB|5,347,329|||
+|MLP_1024_5Layer|20.82MB|5,405,697|||
+|MLP_1024_10Layer|41.03MB|10,663,937|||
+|MLP_1024_15Layer|61.25MB|15,922,177|||
+|MLP_1024_20Layer|81.46MB|21,180,417|||
+
+#### 3.2.1 Residual MLP
+|RESMLP_256_5Layer|1.45MB|368,385|||
+|RESMLP_256_10Layer|2.67MB|699,905|||
+|RESMLP_256_15Layer|2.67MB|699,905|||
+|RESMLP_256_20Layer|2.67MB|699,905|||
+|RESMLP_512_5Layer|2.67MB|1,392,129|||
+|RESMLP_512_10Layer|2.67MB|1,392,129|||
+|RESMLP_512_15Layer|2.67MB|1,392,129|||
+|RESMLP_512_20Layer|2.67MB|1,392,129|||
+|RESMLP_1024_5Layer|2.67MB|1,392,129|||
+|RESMLP_1024_10Layer|2.67MB|1,392,129|||
+|RESMLP_1024_15Layer|2.67MB|1,392,129|||
+|RESMLP_1024_20Layer|2.67MB|1,392,129|||
+
+
+
+
+
+
+<br>
+
+### *3.3. 1D Convolutional Neural Networks Experiements*
 <br>
 
 |Model|Size|Params|Iteration|Minimum Acc|Average Acc|

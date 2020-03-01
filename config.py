@@ -13,3 +13,6 @@ clip = 1.0
 weight_decay = 5e-3
 init_lr = 1e-5
 record_per_step = 100
+factor = 0.1
+patience = 1
+warmup = 1000
