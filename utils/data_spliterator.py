@@ -38,3 +38,27 @@ class DataSpliterator:
         training_dataset = data[:split_point]
         testing_dataset = data[split_point:]
         return training_dataset, testing_dataset
+
+    def ensemble(self, normal, abnormal, n, shuffle=True):
+        """
+        :param normal: normal patient data
+        :param abnormal: abnormal patient data
+        :param shuffle: shuffle or not (default = True)
+        :return: trainset, testset
+        """
+        data = normal
+        data += abnormal
+        split_point = int(len(data) * self._ratio)
+
+        if shuffle:
+            random.shuffle(data)
+
+        training_dataset = data[:split_point]
+        testing_dataset = data[split_point:]
+        ensemble_training_dataset = []
+
+        for _ in range(n):
+            random.shuffle(training_dataset)
+            ensemble_training_dataset.append(training_dataset[:int(split_point * self._ratio)])
+
+        return ensemble_training_dataset, testing_dataset

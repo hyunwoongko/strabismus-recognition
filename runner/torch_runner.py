@@ -6,6 +6,7 @@
 from torch import nn, optim
 
 from config import *
+from runner.loss import FocalLoss
 from utils.data_spliterator import DataSpliterator
 from utils.preprocessor import Preprocessor
 from utils.transformation import Transformation
@@ -37,7 +38,7 @@ def run(model, ratio, step):
     train_feature, train_label = transformation.make_batch(train)
     test_feature, test_label = transformation.make_batch(test)
     opt = torch.optim.Adam(params=model.parameters(), lr=init_lr, weight_decay=weight_decay)
-    criterion = nn.BCELoss()
+    criterion = FocalLoss()
 
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer=opt,
                                                      verbose=True,
@@ -59,7 +60,6 @@ def run(model, ratio, step):
         train_err = error.item()
 
         if i % record_per_step == 0:
-
             train_losses.append(train_err)
             model.eval()
             train_acc, test_acc = 0, 0
@@ -90,7 +90,7 @@ def run(model, ratio, step):
             if i > warmup:
                 scheduler.step(test_err)
                 lr = get_lr(opt)
-                if lr < 1e-7:
+                if lr < 1e-4:
                     break
                     # early stopping
 

@@ -36,17 +36,19 @@ class Model(nn.Module):
 
         self.output_layer = nn.Sequential(
             nn.Dropout(0.5),
-            nn.Linear(3072, 1),
+            nn.Linear(6144, 1),
             nn.Sigmoid())
 
     def forward(self, x):
         b, c, l = x.shape
         x = self.conv1(x)
-        x = self.conv2(x)
+        _x = self.conv2(x)
+        x = torch.cat([x, _x], dim=1)
         x = self.pool1(x)
 
         x = self.conv3(x)
-        x = self.conv4(x)
+        _x = self.conv4(x)
+        x = torch.cat([x, _x], dim=1)
         x = self.pool2(x)
 
         x = x.view(b, -1)

@@ -26,7 +26,7 @@ class Model(nn.Module):
     def __init__(self):
         super(Model, self).__init__()
 
-        self.conv1 = Conv1D(4, 32, kernel_size=5)
+        self.conv1 = Conv1D(4, 32, kernel_size=3)
         self.conv2 = Conv1D(32, 64, kernel_size=3)
         self.pool1 = nn.MaxPool1d(kernel_size=2, stride=2)
 

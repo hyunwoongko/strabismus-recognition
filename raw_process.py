@@ -3,6 +3,7 @@
 @when : 2019-12-19
 @homepage : https://github.com/gusdnd852
 """
+from datetime import datetime
 import os
 
 import pandas as pd
@@ -30,7 +31,9 @@ def transform(path):
 
         extracted = pd.DataFrame(extracted, columns=['LX', 'LY', 'RX', 'RY'])
         processed_path = path.replace('raw', 'processed')
-        extracted.to_csv(processed_path + '{0}_result.txt'.format(file_name.split('.')[0]), index=False)
+        extracted.to_csv(
+            processed_path + '{0}_result_{1}.txt'.format(file_name.split('.')[0],
+                                                         datetime.now().strftime("%Y%m%d")), index=False)
 
 
 if __name__ == '__main__':

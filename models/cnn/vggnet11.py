@@ -26,7 +26,7 @@ class Model(nn.Module):
     def __init__(self):
         super(Model, self).__init__()
 
-        self.conv1 = Conv1D(4, 32, kernel_size=5)
+        self.conv1 = Conv1D(4, 32, kernel_size=3)
         self.conv2 = Conv1D(32, 64, kernel_size=3)
         self.pool1 = nn.MaxPool1d(kernel_size=2, stride=2)
 
@@ -42,13 +42,13 @@ class Model(nn.Module):
         self.conv8 = Conv1D(1024, 2048, kernel_size=3)
         self.pool4 = nn.MaxPool1d(kernel_size=2, stride=2)
 
-        self.conv7 = Conv1D(2048, 2048, kernel_size=3)
-        self.conv8 = Conv1D(2048, 4096, kernel_size=3)
-        self.pool4 = nn.MaxPool1d(kernel_size=2, stride=2)
+        self.conv9 = Conv1D(2048, 2048, kernel_size=3)
+        self.conv10 = Conv1D(2048, 2048, kernel_size=3)
+        self.pool5 = nn.MaxPool1d(kernel_size=2, stride=2)
 
         self.output_layer = nn.Sequential(
             nn.Dropout(0.5),
-            nn.Linear(4096, 1),
+            nn.Linear(2048, 1),
             nn.Sigmoid())
 
     def forward(self, x):
@@ -68,6 +68,10 @@ class Model(nn.Module):
         x = self.conv7(x)
         x = self.conv8(x)
         x = self.pool4(x)
+
+        x = self.conv9(x)
+        x = self.conv10(x)
+        x = self.pool5(x)
 
         x = x.view(b, -1)
         x = self.output_layer(x)

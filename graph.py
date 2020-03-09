@@ -81,5 +81,5 @@ def draw_all(_from, _to):
 
 
 if __name__ == '__main__':
-    draw_all(1, 11)
-    # draw(5)
+    # draw_all(1, 11)
+    draw(1)
