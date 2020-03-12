@@ -89,8 +89,8 @@ class PytorchTrainer(Trainer):
         model.train()
 
         train_feature, train_label, train_name = train_set
-        x = train_feature.cuda().float()
-        y = train_label.cuda().float()
+        x = train_feature.float().cuda()
+        y = train_label.long().cuda()
         y_ = model(x).float()
 
         self.optimizer.zero_grad()
@@ -100,7 +100,7 @@ class PytorchTrainer(Trainer):
         clip_grad_norm_(model.parameters(), self.gradient_clipping)
 
         error = error.item()
-        predict = [round(i.item()) for i in y_]
+        _, predict = torch.max(y_, dim=1)
         accuracy = self.get_accuracy(y, predict)
         return error, accuracy
 
@@ -108,12 +108,13 @@ class PytorchTrainer(Trainer):
         model.eval()
 
         test_feature, test_label, test_name = test_set
-        x = test_feature.cuda().float()
-        y = test_label.cuda().float()
+        x = test_feature.float().cuda()
+        y = test_label.long().cuda()
         y_ = model(x).float()
 
         error = self.loss(y_, y)
         error = error.item()
-        predict = [round(i.item()) for i in y_]
+        _, predict = torch.max(y_, dim=1)
         accuracy = self.get_accuracy(y, predict)
         return error, accuracy
+

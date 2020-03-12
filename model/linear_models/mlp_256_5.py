@@ -33,8 +33,7 @@ class Model(nn.Module):
         self.mid_layer = nn.Sequential(*self.mid_layer)
         self.out_layer = nn.Sequential(
             nn.Dropout(0.5),
-            nn.Linear(unit, 1),
-            nn.Sigmoid())
+            nn.Linear(unit, 2))
 
     def forward(self, x):
         b, c, l = x.shape

@@ -16,13 +16,14 @@ max_length = 35
 test_data_ratio = 0.1
 
 # for torch
-init_lr = 5e-6
-max_step = 50000
-weight_decay = 5e-3
+init_lr = 1e-5
+max_step = 10000
+weight_decay = 1e-2
 gradient_clipping = 1.0
-record_per_step = 10
+record_per_step = 1
 scheduling_factor = 0.5
-scheduling_patience = 1
-scheduling_warmup = 300
-scheduling_finish = init_lr * 0.01
+scheduling_patience = 10
+scheduling_warmup = 50
+scheduling_finish = init_lr * 0.1
 focal_gamma = 1.5
+smoothing = 0.2

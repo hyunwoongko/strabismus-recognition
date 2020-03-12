@@ -17,12 +17,12 @@ class Attention(nn.Module):
 
     def forward(self, q, k, v):
         b, c, l = q.size()
-        k_t = k.reshape(b, l, c)
+        k_t = k.transpose(2, 1)
 
-        score = q @ k_t
+        score = k_t @ q
         score /= math.sqrt(l)
         score = self.softmax(score)
-        return score @ v
+        return v @ score
 
 
 class PositionalEncoding(nn.Module):
@@ -54,7 +54,8 @@ class FeedforwardNetwork(nn.Module):
     def forward(self, x):
         x = self.lienar1(x)
         x = self.relu(x)
-        return self.lienar2(x)
+        x = self.lienar2(x)
+        return self.relu(x)
 
 
 class Embedding(nn.Module):
@@ -101,8 +102,7 @@ class Model(nn.Module):
         self.encoder6 = Encoder(_in=256)
         self.out = nn.Sequential(
             nn.Dropout(0.5),
-            nn.Linear(8960, 1),
-            nn.Sigmoid())
+            nn.Linear(8960, 2))
 
     def forward(self, x):
         b, c, l = x.size()

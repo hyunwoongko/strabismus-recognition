@@ -50,4 +50,5 @@ class GraphDrawer:
 
 if __name__ == '__main__':
     drawer = GraphDrawer()
-    drawer.draw_both(0)
+    for i in range(0, 10):
+        drawer.draw_accuracy(i)

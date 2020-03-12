@@ -5,27 +5,26 @@
 """
 import torch
 from torch import nn
+from torch.nn import functional as F
 
 
-class FocalLoss(nn.Module):
-
-    def __init__(self, gamma):
-        super(FocalLoss, self).__init__()
+class FocalSmoothingLoss(nn.Module):
+    def __init__(self, gamma, smoothing, dim=-1):
+        super(FocalSmoothingLoss, self).__init__()
+        self.confidence = 1.0 - smoothing
+        self.smoothing = smoothing
+        self.dim = dim
         self.gamma = gamma
-        self.ce = torch.nn.BCELoss()
 
-    def forward(self, x, y):
-        logp = self.ce(x, y.float())
-        p = torch.exp(-logp)
-        loss = (1 - p) ** self.gamma * logp
-        return loss.mean()
+    def forward(self, pred, target):
+        pred = pred.log_softmax(dim=self.dim)
+        with torch.no_grad():
+            # true_dist = pred.data.clone()
+            true_dist = torch.zeros_like(pred)
+            true_dist.fill_(self.smoothing / 1)
+            true_dist.scatter_(1, target.data.unsqueeze(1), self.confidence)
 
-
-class BCELoss(nn.Module):
-
-    def __init__(self):
-        super(BCELoss, self).__init__()
-        self.ce = torch.nn.BCELoss()
-
-    def forward(self, x, y):
-        return self.ce(x, y)
+        smooting_loos = torch.mean(torch.sum(-true_dist * pred, dim=self.dim))
+        p = torch.exp(-smooting_loos)
+        focal_loss = (1 - p) ** self.gamma * smooting_loos
+        return focal_loss

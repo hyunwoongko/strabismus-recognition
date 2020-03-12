@@ -1,7 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="34c777b3-3e7b-46a7-8a6b-2c0c680df326" name="Default Changelist" comment="" />
+    <list default="true" id="34c777b3-3e7b-46a7-8a6b-2c0c680df326" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Strabismus-Final.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Strabismus Recognition.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Strabismus-Recognizer.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration.py" beforeDir="false" afterPath="$PROJECT_DIR$/configuration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_accuracy_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_accuracy_0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_accuracy_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_accuracy_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_accuracy_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_accuracy_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_accuracy_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_accuracy_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_accuracy_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_accuracy_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_accuracy_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_accuracy_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_accuracy_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_accuracy_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_accuracy_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_accuracy_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_accuracy_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_accuracy_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_accuracy_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_accuracy_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_error_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_error_0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_error_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_error_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_error_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_error_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_error_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_error_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_error_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_error_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_error_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_error_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_error_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_error_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_error_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_error_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_error_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_error_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/test_error_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/test_error_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_accuracy_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_accuracy_0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_accuracy_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_accuracy_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_accuracy_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_accuracy_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_accuracy_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_accuracy_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_accuracy_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_accuracy_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_accuracy_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_accuracy_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_accuracy_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_accuracy_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_accuracy_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_accuracy_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_accuracy_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_accuracy_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_accuracy_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_accuracy_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_error_0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_error_0.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_error_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_error_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_error_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_error_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_error_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_error_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_error_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_error_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_error_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_error_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_error_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_error_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_error_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_error_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_error_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_error_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/train_error_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log/train_error_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/cnn_models/densenet_10_k0.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/cnn_models/densenet_10_k0.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/cnn_models/densenet_10_k2.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/cnn_models/densenet_10_k2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/cnn_models/densenet_10_k4.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/cnn_models/densenet_10_k4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/cnn_models/inception_9.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/cnn_models/inception_9.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/cnn_models/inception_resnet_13.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/cnn_models/inception_resnet_13.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/cnn_models/resnet_13.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/cnn_models/resnet_13.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/cnn_models/resnet_13_kernel3.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/cnn_models/resnet_13_kernel3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/cnn_models/resnet_17.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/cnn_models/resnet_17.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/cnn_models/resnext_13g2.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/cnn_models/resnext_13g2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/cnn_models/resnext_13g4.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/cnn_models/resnext_13g4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/cnn_models/vggnet_9.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/cnn_models/vggnet_9.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/linear_models/mlp_128_10.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/linear_models/mlp_128_10.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/linear_models/mlp_128_15.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/linear_models/mlp_128_15.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/linear_models/mlp_128_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/linear_models/mlp_128_5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/linear_models/mlp_256_10.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/linear_models/mlp_256_10.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/linear_models/mlp_256_15.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/linear_models/mlp_256_15.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/linear_models/mlp_256_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/linear_models/mlp_256_5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/linear_models/mlp_512_10.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/linear_models/mlp_512_10.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/linear_models/mlp_512_15.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/linear_models/mlp_512_15.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/linear_models/mlp_512_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/linear_models/mlp_512_5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/linear_models/trainsformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/linear_models/transformer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/rnn_models/bilstm_256_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/rnn_models/bilstm_256_4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/rnn_models/bilstm_256_8.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/rnn_models/bilstm_256_8.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/rnn_models/lstm_256_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/rnn_models/lstm_256_4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/rnn_models/lstm_256_8.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/rnn_models/lstm_256_8.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pytorch_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/pytorch_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainer/pytorch_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/trainer/pytorch_trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/graph_drawer.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/graph_drawer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/loss_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/loss_function.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/raw_data_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/raw_data_processor.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,32 +95,36 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Yy1bv0C2S0dSVZq4GcPRI4w1Xw" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/model/rnn_models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/model/cnn_models" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\User\Github\Strabismus-Final\model\rnn_models" />
-      <recent name="C:\Users\User\Github\Strabismus-Final\model\cnn_models" />
-      <recent name="C:\Users\User\Github\Strabismus-Final\model\linear_models" />
-      <recent name="C:\Users\User\Github\Strabismus-Final" />
-      <recent name="C:\Users\User\Github\Strabismus-Final\model\ml_models" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\Github\Strabismus-Final\model\linear_models" />
       <recent name="C:\Users\User\Github\Strabismus-Final\utils" />
       <recent name="C:\Users\User\Github\Strabismus-Final\data_processor" />
       <recent name="C:\Users\User\Github\Strabismus-Final\data" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Github\Strabismus Recognition\model\cnn_models" />
+      <recent name="C:\Users\User\Github\Strabismus-Final\model\rnn_models" />
+      <recent name="C:\Users\User\Github\Strabismus-Final\model\cnn_models" />
+      <recent name="C:\Users\User\Github\Strabismus-Final\model\linear_models" />
+      <recent name="C:\Users\User\Github\Strabismus-Final" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -58,9 +139,124 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.pytorch_test2">
+  <component name="RunManager" selected="Python.pytorch_test">
+    <configuration default="true" type="DjangoTestsConfigurationType">
+      <module name="Strabismus Recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="Strabismus Recognition" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="Strabismus Recognition" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <module name="Strabismus Recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <module name="Strabismus Recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="Strabismus Recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="graph_drawer" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Strabismus-Final" />
+      <module name="Strabismus Recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -82,7 +278,7 @@
       <method v="2" />
     </configuration>
     <configuration name="pytorch_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Strabismus-Final" />
+      <module name="Strabismus Recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -104,7 +300,7 @@
       <method v="2" />
     </configuration>
     <configuration name="pytorch_test2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Strabismus-Final" />
+      <module name="Strabismus Recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -125,20 +321,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pytorch_test3" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Strabismus-Final" />
+    <configuration name="pytorch_trainer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Strabismus Recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/trainer" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pytorch_test3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/trainer/pytorch_trainer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -147,35 +343,94 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sklearn_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Strabismus-Final" />
+    <configuration name="raw_data_processor" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Strabismus Recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sklearn_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/raw_data_processor.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Python.FlaskServer">
+      <module name="Strabismus Recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="Strabismus Recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="Strabismus Recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="Strabismus Recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.pytorch_test2" />
-        <item itemvalue="Python.graph_drawer" />
-        <item itemvalue="Python.pytorch_test3" />
         <item itemvalue="Python.pytorch_test" />
-        <item itemvalue="Python.sklearn_test" />
+        <item itemvalue="Python.graph_drawer" />
+        <item itemvalue="Python.pytorch_trainer" />
+        <item itemvalue="Python.raw_data_processor" />
+        <item itemvalue="Python.pytorch_test2" />
       </list>
     </recent_temporary>
   </component>
@@ -190,21 +445,37 @@
       <option name="presentableId" value="Default" />
       <updated>1583900094092</updated>
       <workItem from="1583900096887" duration="71203000" />
+      <workItem from="1584004798104" duration="19660000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Strabismus_Final$dataset_generator.coverage" NAME="dataset_generator Coverage Results" MODIFIED="1583922463620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/Strabismus_Final$graph_drawer.coverage" NAME="graph_drawer Coverage Results" MODIFIED="1584003724473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
-    <SUITE FILE_PATH="coverage/Strabismus_Final$pytorch_test.coverage" NAME="pytorch_test Coverage Results" MODIFIED="1583987332321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Strabismus_Final$pytorch_test3.coverage" NAME="pytorch_test3 Coverage Results" MODIFIED="1583987334433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Strabismus_Final$pytorch_trainer.coverage" NAME="pytorch_trainer Coverage Results" MODIFIED="1583944896153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/trainer" />
+    <SUITE FILE_PATH="coverage/Strabismus_Recognition$pytorch_test.coverage" NAME="pytorch_test Coverage Results" MODIFIED="1584028116937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Strabismus_Recognition$graph_drawer.coverage" NAME="graph_drawer Coverage Results" MODIFIED="1584023536022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/Strabismus_Final$pytorch_test2.coverage" NAME="pytorch_test2 Coverage Results" MODIFIED="1584003905276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Strabismus_Recognition$pytorch_trainer.coverage" NAME="pytorch_trainer Coverage Results" MODIFIED="1584014490084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/trainer" />
+    <SUITE FILE_PATH="coverage/Strabismus_Final$pytorch_test.coverage" NAME="pytorch_test Coverage Results" MODIFIED="1583987332321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Strabismus_Recognition$raw_data_processor.coverage" NAME="raw_data_processor Coverage Results" MODIFIED="1584011991155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/Strabismus_Final$sklearn_test.coverage" NAME="sklearn_test Coverage Results" MODIFIED="1583986279380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Strabismus_Final$sklearn_test__1_.coverage" NAME="sklearn_test (1) Coverage Results" MODIFIED="1583937646071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Strabismus_Final$configuration.coverage" NAME="configuration Coverage Results" MODIFIED="1583940588203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Strabismus_Final$pytorch_test2.coverage" NAME="pytorch_test2 Coverage Results" MODIFIED="1584003905276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

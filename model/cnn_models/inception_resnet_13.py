@@ -60,8 +60,7 @@ class Model(nn.Module):
 
         self.out = nn.Sequential(
             nn.Dropout(0.5),
-            nn.Linear(1024, 1),
-            nn.Sigmoid())
+            nn.Linear(1024, 2))
 
     def forward(self, x):
         b, c, l = x.shape

@@ -3,6 +3,7 @@
 @when : 8/25/2019
 @homepage : https://github.com/gusdnd852
 """
+import torch
 from torch import nn
 
 
@@ -25,7 +26,6 @@ class Model(nn.Module):
 
     def __init__(self):
         super(Model, self).__init__()
-
         self.conv1 = Conv1D(4, 256, kernel_size=1)
         self.conv2 = Conv1D(256, 256, kernel_size=1)
         self.conv3 = Conv1D(256, 256, kernel_size=1)
@@ -46,11 +46,11 @@ class Model(nn.Module):
 
         self.output_layer = nn.Sequential(
             nn.Dropout(0.5),
-            nn.Linear(1024, 1),
-            nn.Sigmoid())
+            nn.Linear(1024, 2))
 
     def forward(self, x):
         b, c, l = x.shape
+        x = self.stem(x)
 
         x = self.conv1(x)
         x = self.conv2(x)

@@ -12,7 +12,7 @@ from datetime import datetime
 import pandas as pd
 import torch
 
-from configuration import root_data_path
+from configuration import root_path
 
 
 def transform(path: str):
@@ -39,5 +39,6 @@ def transform(path: str):
 
 
 if __name__ == '__main__':
-    transform(root_data_path + "raw\\normal\\")
-    transform(root_data_path + "raw\\abnormal\\")
+    transform(root_path + "\\data\\raw\\normal\\")
+    transform(root_path + "\\data\\raw\\abnormal\\")
+

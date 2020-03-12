@@ -23,8 +23,7 @@ class Model(nn.Module):
                             bidirectional=True if direction == 2 else False)
 
         self.out = nn.Sequential(
-            nn.Linear(hidden * direction, 1),
-            nn.Sigmoid())
+            nn.Linear(hidden * direction, 2))
 
     def init_hidden(self, batch_size):
         return (torch.zeros(layer * direction, batch_size, hidden).cuda(),
