@@ -27,7 +27,8 @@ class Trainer:
                  scheduling_patience: int,
                  scheduling_warmup: int,
                  scheduling_finish: float,
-                 gradient_clipping: float):
+                 gradient_clipping: float,
+                 flatten:bool):
 
         self.model = model
         self.ratio = ratio
@@ -43,8 +44,8 @@ class Trainer:
         self.optimizer = None
         self.scheduler = None
 
-        dataset_generator = DatasetGenerator(max_length=max_length, ratio=ratio)
-        self.train_data, self.test_data = dataset_generator.make_dataset(path=path, label=(0, 1))
+        dataset_generator = DatasetGenerator(max_length=max_length, ratio=ratio, flatten=flatten)
+        self.train_data, self.test_data = dataset_generator.make_dataset(path=path)
 
     def __call__(self, *args, **kwargs):
         raise NotImplementedError()
@@ -57,7 +58,7 @@ class Trainer:
 
     def initialize_weights(self, model):
         if hasattr(model, 'weight') and model.weight.dim() > 1:
-            nn.init.kaiming_normal(model.weight.data)
+            nn.init.kaiming_uniform(model.weight.data)
 
     def get_lr(self, optimizer):
         for param_group in optimizer.param_groups:

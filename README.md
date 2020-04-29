@@ -1,4 +1,4 @@
-# *Strabismus Recognizer* 👀
+5# *Strabismus Recognizer* 👀
 *This project is to develop strabismus diagnostic software for use in ophthalmology.*
 <br><br><br>
 

@@ -22,16 +22,18 @@ class SklearnTrainer(Trainer):
                  scheduling_patience: int = None,
                  scheduling_warmup: int = None,
                  scheduling_finish: float = None,
-                 gradient_clipping: float = None):
+                 gradient_clipping: float = None,
+                 flatten: bool = True):
 
         super().__init__(path, model, max_length, ratio,
                          max_step, init_lr, weight_decay, loss,
                          scheduling_factor, scheduling_patience,
                          scheduling_warmup, scheduling_finish,
-                         gradient_clipping)
+                         gradient_clipping, flatten)
 
     def __call__(self, ensemble: int = 1):
         accuracies = []
+        print()
 
         for i, dataset in enumerate(zip(self.train_data, self.test_data)):
             train = dataset[0]

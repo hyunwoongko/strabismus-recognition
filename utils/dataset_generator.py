@@ -15,7 +15,7 @@ from utils.data_sample import Sample
 
 class DatasetGenerator:
 
-    def __init__(self, max_length: int, ratio: float):
+    def __init__(self, max_length: int, ratio: float, flatten: bool, shuffle=False):
         """
         Dataset generator for training model
 
@@ -32,8 +32,10 @@ class DatasetGenerator:
 
         self.max_length = max_length
         self.ratio = ratio
+        self.flatten = flatten
+        self.shuffle = shuffle
 
-    def make_dataset(self, path: str, label: tuple) -> tuple:
+    def make_dataset(self, path: str) -> tuple:
         """
         make cross validation dataset for training
 
@@ -42,17 +44,16 @@ class DatasetGenerator:
         :return: train/test dataset
         """
 
-        normal_label, abnormal_label = label
-        normal_data = self.__load_data(path=path + "\\data\\processed\\normal\\", label=normal_label)
-        abnormal_data = self.__load_data(path=path + "\\data\\processed\\abnormal\\", label=abnormal_label)
+        normal_data = self.load_data(path=path + "\\data\\normal\\", label=0)
+        abnormal_data = self.load_data(path=path + "\\data\\abnormal\\", label=1)
 
-        train_dataset, test_dataset = self.__cross_validation_split(normal_data, abnormal_data)
-        train_dataset = [self.__make_tensor(train) for train in train_dataset]
-        test_dataset = [self.__make_tensor(test) for test in test_dataset]
+        train_dataset, test_dataset = self.cross_validation_split(normal_data + abnormal_data)
+        train_dataset = [self.make_tensor(train) for train in train_dataset]
+        test_dataset = [self.make_tensor(test) for test in test_dataset]
 
         return train_dataset, test_dataset
 
-    def __load_data(self, path: str, label: int) -> list:
+    def load_data(self, path: str, label: int) -> list:
         """
         load data file from data path
 
@@ -62,16 +63,26 @@ class DatasetGenerator:
         """
 
         dataset = []
+        dirs = os.listdir(path)
+        if self.shuffle:
+            random.shuffle(dirs)
 
-        for file_name in os.listdir(path):
+        for i, file_name in enumerate(dirs):
+            file_name = file_name.lower()
+            if i > 0:
+                find_same_patient = False
+                for sample in dataset:
+                    if sample.file_name[0:2] == file_name[0:2]:
+                        find_same_patient = True
+
+                if find_same_patient:
+                    continue
+
+            print(file_name)
             data = pd.read_csv(path + file_name)
-            transform = torch.tensor([data.loc[:, 'LX'],
-                                      data.loc[:, 'RX'],
-                                      data.loc[:, 'LY'],
-                                      data.loc[:, 'RY']]).tolist()
-
-            transform = torch.tensor(transform).t()
-            transform = self.__pad_sequencing(transform)
+            transform = data.loc[:, 'RPCX'] - data.loc[:, 'LPCX']
+            transform = torch.tensor(transform)
+            transform = self.pad_sequencing(transform)
             transform = transform.tolist()
             dataset.append(Sample(feature=torch.tensor(transform),
                                   label=torch.tensor(label),
@@ -79,7 +90,7 @@ class DatasetGenerator:
 
         return dataset
 
-    def __pad_sequencing(self, sequence: torch.Tensor) -> torch.Tensor:
+    def pad_sequencing(self, sequence: torch.Tensor) -> torch.Tensor:
         """
         fix the size of input sequence uniformly.
 
@@ -90,13 +101,14 @@ class DatasetGenerator:
         if sequence.size()[0] > self.max_length:
             sequence = sequence[:self.max_length]
         else:
-            for _ in range(self.max_length - sequence.size()[0]):
-                pad = torch.zeros(sequence.size()[1]).unsqueeze(dim=0)
-                sequence = torch.cat(tensors=(sequence, pad))
+            pad = torch.zeros(self.max_length)
+            for i in range(sequence.size()[0]):
+                pad[i] = sequence[i]
+            sequence = pad
 
         return sequence
 
-    def __cross_validation_split(self, normal: list, abnormal: list) -> tuple:
+    def cross_validation_split(self, data: list) -> tuple:
         """
         split the whole data into training data and test data
         for k-fold cross validation
@@ -108,8 +120,9 @@ class DatasetGenerator:
         test_dataset = []
         train_dataset = []
 
-        data = normal + abnormal
-        random.shuffle(data)
+        if self.shuffle:
+            random.shuffle(data)
+
         start_point = 0
         size = len(data)
 
@@ -126,9 +139,11 @@ class DatasetGenerator:
             train_dataset.append(train)
             start_point = stop_point
 
+        print("total", size, "samples : ", len(train_dataset[0]), "train set + ",
+              len(test_dataset[0]), "test set")
         return train_dataset, test_dataset
 
-    def __make_tensor(self, data: list) -> tuple:
+    def make_tensor(self, data: list) -> tuple:
         """
         make list data to torch.Tensor
 
@@ -145,7 +160,10 @@ class DatasetGenerator:
 
         features = torch.cat(features, dim=0)
         labels = torch.cat(labels, dim=0)
-        features = features.transpose(1, 2)
-        # make [batch_size, channel, length]
+
+        if not self.flatten:
+            features = features.unsqueeze(0)
+            features = features.transpose(0, 1)
+            # make [batch_size, channel, length]
 
         return features, labels, name

@@ -5,12 +5,11 @@
 """
 import torch
 from torch import nn
-from torch.nn import functional as F
 
 
-class FocalSmoothingLoss(nn.Module):
+class LossFunction(nn.Module):
     def __init__(self, gamma, smoothing, dim=-1):
-        super(FocalSmoothingLoss, self).__init__()
+        super(LossFunction, self).__init__()
         self.confidence = 1.0 - smoothing
         self.smoothing = smoothing
         self.dim = dim

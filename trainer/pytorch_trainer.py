@@ -11,7 +11,7 @@ from torch.nn.utils import clip_grad_norm_
 from torch.optim import Adam
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 from trainer.abstract_trainer import Trainer
-from utils.graph_drawer import GraphDrawer
+from utils.training_graph import GraphDrawer
 
 
 class PytorchTrainer(Trainer):
@@ -27,13 +27,14 @@ class PytorchTrainer(Trainer):
                  scheduling_patience: int,
                  scheduling_warmup: int,
                  scheduling_finish: float,
-                 gradient_clipping: float):
+                 gradient_clipping: float,
+                 flatten: bool = False):
 
         super().__init__(path, model, max_length, ratio,
                          max_step, init_lr, weight_decay, loss,
                          scheduling_factor, scheduling_patience,
                          scheduling_warmup, scheduling_finish,
-                         gradient_clipping)
+                         gradient_clipping, flatten)
 
     def __call__(self):
         final_test_accuracy = []
@@ -55,9 +56,12 @@ class PytorchTrainer(Trainer):
 
             for j in range(max_step + 1):
                 train_err, train_acc = self.train(model=current_model, train_set=train)
+                test_err, test_acc = self.test(model=current_model, test_set=test)
+                if self.early_stop(step=j, metric=test_err,
+                                   warm_up=self.scheduling_warmup,
+                                   finish=self.scheduling_finish): break
 
                 if j % record_per_step == 0:
-                    test_err, test_acc = self.test(model=current_model, test_set=test)
                     train_accuracies.append(train_acc)
                     train_errors.append(train_err)
                     test_accuracies.append(test_acc)
@@ -66,17 +70,15 @@ class PytorchTrainer(Trainer):
                     self.save_result('train_error', train_errors, step=i)
                     self.save_result('test_accuracy', test_accuracies, step=i)
                     self.save_result('test_error', test_errors, step=i)
-
                     print('step : {0} , train_error : {1} , test_error : {2}, train_acc : {3}, test_acc : {4}'.
                           format(j, round(train_err, 5), round(test_err, 5), round(train_acc, 5), round(test_acc, 5)))
-
-                    if self.early_stop(step=j, metric=test_err,
-                                       warm_up=self.scheduling_warmup,
-                                       finish=self.scheduling_finish): break
 
             final_test_accuracy.append(test_acc)
             graph = GraphDrawer()
             graph.draw_both(step=i)
+            model_name = root_path + "\\saved\\model_" + str(i) + "_" + str(round(test_acc, 2)).split(".")[1] + ".pth"
+            torch.save(current_model.state_dict(), model_name)
+            print("model saved : " + model_name)
 
         average = sum(final_test_accuracy) / len(final_test_accuracy)
         maximum = max(final_test_accuracy)
@@ -97,7 +99,7 @@ class PytorchTrainer(Trainer):
         error = self.loss(y_, y)
         error.backward()
         self.optimizer.step()
-        clip_grad_norm_(model.parameters(), self.gradient_clipping)
+        # clip_grad_norm_(model.parameters(), self.gradient_clipping)
 
         error = error.item()
         _, predict = torch.max(y_, dim=1)
@@ -117,4 +119,3 @@ class PytorchTrainer(Trainer):
         _, predict = torch.max(y_, dim=1)
         accuracy = self.get_accuracy(y, predict)
         return error, accuracy
-
