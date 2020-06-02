@@ -47,4 +47,5 @@ RUN python3 -m pip --no-cache-dir install --upgrade \
 RUN ln -s $(which python3) /usr/local/bin/python
 
 # 5. set up python packages
+COPY requirements.txt /
 RUN pip3 install -r requirements.txt
