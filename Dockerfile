@@ -1,5 +1,5 @@
 # @author hyunwoong
-# @see "https://hub.docker.com/r/gusdnd852/hyunwoong"
+# @see "https://hub.docker.com/r/gusdnd852/strabismus-recognition"
 
 # 1. Load cuda-ubuntu
 ARG UBUNTU_VERSION=18.04
