@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Strabismus Recognition.iml" filepath="$PROJECT_DIR$/Strabismus Recognition.iml" />
+      <module fileurl="file://$PROJECT_DIR$/strabismus-recognition.iml" filepath="$PROJECT_DIR$/strabismus-recognition.iml" />
     </modules>
   </component>
 </project>
