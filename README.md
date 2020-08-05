@@ -1,4 +1,4 @@
-5# *Strabismus Recognizer* 👀
+﻿# *Strabismus Recognizer* 👀
 *This project is to develop strabismus diagnostic software for use in ophthalmology.*
 <br><br><br>
 
@@ -33,102 +33,6 @@ In each experiment, we create and experiment with a total of 10 new models,
 and evaluate the minimum and average accuracy of the 10 models as the 
 performance of the model.* 
 <br><br>
-
-
-### *3.1. Traditional Machine Learning Models Experiements*
-<br>
-
-|Model|Minimum Acc|Average Acc|
-|:---:|:---:|:---:|
-|SVM|0.375|0.559|
-|NuSVM|0.525|0.6954|
-|LinearSVM|0.525|0.6944|
-|Decision Tree|0.475|0.706|
-|Extra Tree|0.575|0.7144|
-|Ada Boost|0.575|0.7204|
-|Random Forest|0.625|0.7669|
-|Gradient Boosting|0.65|0.7785|
-|XGBoost|0.675|0.7769|
-|Gaussian Naive Bayes|0.375|0.5215|
-|Bernoulli Naive Bayes|0.45|0.5815|
-|K Nearest Neighbors|0.6296|0.7074|
-|Linear Regression|0.225|0.32|
-|Logistic Regression|0.525|0.6425|
-|Logistic Regression(CV)|0.55|0.6525|
-
-
-
-Experimental results from traditional machine learning models. 
-Even with the data added, the performance of the ensemble models 
-(Bagging & Boosting) is the highest. In addition, we experimented 
-with the XGBoost model, which shows performance similar 
-to Gradient Boosting or Random Forest. (About 80% accuracy)
-<br><br>
-
-
-### *3.2. Multi Layer Perceptron Experiements*
-
-#### 3.2.1 Normal MLP
-|Model|Size|Params|Minimum Acc|Average Acc|
-|:---:|:---:|:---:|:---:|:---:|
-|MLP_256_5Layer|1.45MB|368,385|0.5|0.675|
-|MLP_256_10Layer|2.67MB|699,905|0.375|0.495|
-|MLP_256_15Layer|4.06MB|1,031,425|0.35|0.469|
-|MLP_512_5Layer|5.41MB|1,392,129|0.5|0.69|
-|MLP_512_10Layer|10.52MB|2,710,529|0.35|0.4925|
-|MLP_512_15Layer|15.62MB|4,028,929|0.375|0.485|
-|MLP_1024_5Layer|20.82MB|5,405,697|0.575|0.675|
-|MLP_1024_10Layer|41.03MB|10,663,937|0.4|0.514|
-|MLP_1024_15Layer|61.25MB|15,922,177|0.425|0.52|
-
-#### 3.2.1 Residual MLP
-|Model|Size|Params|Minimum Acc|Average Acc|
-|:---:|:---:|:---:|:---:|:---:|
-|RES_MLP_256_5Layer|1.45MB|368,385|0.55|0.664|
-|RES_MLP_256_10Layer|2.67MB|699,905|0.6|0.712|
-|RES_MLP_256_15Layer|4.06MB|1,031,425|0.675|0.7274|
-|RES_MLP_512_5Layer|5.41MB|1,392,129|0.625|0.715|
-|RES_MLP_512_10Layer|10.52MB|2,710,529|0.6|0.72|
-|RES_MLP_512_15Layer|15.62MB|4,028,929|0.475|0.68|
-|RES_MLP_1024_5Layer|20.82MB|5,405,697|0.575|0.695|
-|RES_MLP_1024_10Layer|41.03MB|10,663,937|0.65|0.725|
-|RES_MLP_1024_15Layer|61.25MB|15,922,177|0.55|0.6624|
-
-
-<br>
-
-### *3.3. 1D Convolutional Neural Networks Experiements*
-<br>
-
-|Model|Size|Params|Minimum Acc|Average Acc|
-|:---:|:---:|:---:|:---:|:---:|
-|VGG3|0.15MB|8,161|0.45|0.6625|
-|VGG5|0.85MB|133,153|0.55|0.73|
-|VGG7|8.8MB|2,105,889|0.525|0.735|
-|VGG9|45.24MB|11,552,289|0.7|0.77|
-|VGG11|141.53MB|36,728,353|0.5|0.6475|
-|VGG13|237.70MB|61,906,465|0.35|0.5075|
-
-|Inception3|14,529|0.24MB|0.425|0.7424|
-|Inception5|262,785|1.55MB|0.45|0.745|
-|Inception7|||0.75|0.7975|
-|Inception9|||0.75|0.82|
-|Inception11|||0.725|0.785|
-
-|Inception_resnet5|262,785|1.55MB|0.45|0.737|
-|Inception_resnet9|||0|0|
-|Inception_resnet13|||0|0|
-|Inception_resnet17|||0|0|
-
-
-
-
-
-
-
-
-<br><br><br>
-
 
 ## 4. *Licence*
 
