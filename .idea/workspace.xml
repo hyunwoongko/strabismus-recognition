@@ -20,97 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34c777b3-3e7b-46a7-8a6b-2c0c680df326" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/decorators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/data_loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Strabismus Recognition.iml" beforeDir="false" afterPath="$PROJECT_DIR$/strabismus-recognition.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_accuracy_0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_accuracy_1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_accuracy_10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_accuracy_11.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_accuracy_12.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_accuracy_13.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_accuracy_2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_accuracy_3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_accuracy_4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_accuracy_5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_accuracy_6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_accuracy_7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_accuracy_8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_accuracy_9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_error_0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_error_1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_error_10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_error_11.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_error_12.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_error_13.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_error_2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_error_3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_error_4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_error_5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_error_6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_error_7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_error_8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/test_error_9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_accuracy_0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_accuracy_1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_accuracy_10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_accuracy_11.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_accuracy_12.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_accuracy_13.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_accuracy_2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_accuracy_3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_accuracy_4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_accuracy_5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_accuracy_6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_accuracy_7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_accuracy_8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_accuracy_9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_error_0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_error_1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_error_10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_error_11.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_error_12.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_error_13.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_error_2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_error_3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_error_4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_error_5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_error_6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_error_7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_error_8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/train_error_9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/cnn_models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/cnn_models/resnet.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/linear_models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/linear_models/mlp_256_5.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/linear_models/transformer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/ml_models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/rnn_models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/rnn_models/bilstm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/rnn_models/lstm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytorch_evaluator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytorch_train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/saved/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sklearn_train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainer/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainer/abstract_trainer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainer/pytorch_trainer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainer/sklearn_trainer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/data_sample.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/dataset_generator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/loss_function.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/raw_processor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/training_graph.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/visualization.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -338,7 +248,7 @@
       <workItem from="1588161751174" duration="7380000" />
       <workItem from="1596473249087" duration="2821000" />
       <workItem from="1596540176951" duration="197000" />
-      <workItem from="1596627552654" duration="1769000" />
+      <workItem from="1596627552654" duration="3310000" />
     </task>
     <servers />
   </component>
