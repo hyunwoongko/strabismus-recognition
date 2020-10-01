@@ -20,15 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34c777b3-3e7b-46a7-8a6b-2c0c680df326" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/engine/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/engine/dataset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/engine/model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reproduce.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/.browserslistrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/manage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/recognize.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/version.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_ensemble.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/train_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_jupyter.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/engine/dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reproduce.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/strabismus-recognition.iml" beforeDir="false" afterPath="$PROJECT_DIR$/strabismus-recognition.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,6 +69,17 @@
       </list>
     </option>
   </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -78,43 +98,63 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.14554794" />
     <property name="project.structure.side.proportion" value="0.2562893" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.templateLanguages.PyTemplateLanguageModulesConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\MY\Github\strabismus-recognition\templates" />
+      <recent name="C:\Users\MY\Github\strabismus-recognition\static" />
+      <recent name="C:\Users\MY\Github\strabismus-recognition\engine" />
+      <recent name="C:\Users\User\Github\Strabismus Recognition\data" />
+      <recent name="C:\Users\User\Github\Strabismus Recognition\data\raw" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MY\Github\strabismus-recognition\templates" />
       <recent name="C:\Users\User\Github\Strabismus Recognition\data\test" />
       <recent name="C:\Users\User\Github\Strabismus Recognition\data" />
       <recent name="C:\Users\User\Github\Strabismus Recognition\data\abnormal" />
       <recent name="C:\Users\User\Github\Strabismus Recognition" />
-      <recent name="C:\Users\User\Github\Strabismus Recognition\model\linear_models" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\MY\Github\strabismus-recognition\engine" />
-      <recent name="C:\Users\User\Github\Strabismus Recognition\data" />
-      <recent name="C:\Users\User\Github\Strabismus Recognition\data\raw" />
-      <recent name="C:\Users\User\Github\Strabismus Recognition\data\processed" />
-      <recent name="C:\Users\User\Github\Strabismus Recognition\data\test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.reproduce">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.application">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="application" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="strabismus-recognition" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/application.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
     <configuration name="dataset (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="strabismus-recognition" />
@@ -160,29 +200,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="raw_processor" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="strabismus-recognition" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/raw_processor.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="reproduce" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test_ensemble" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="strabismus-recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -195,7 +213,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/reproduce.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_ensemble.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -204,7 +222,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="visualization" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="train_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="strabismus-recognition" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -212,12 +230,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/visualization.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\MY\Github\strabismus-recognition\train_model.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -228,11 +246,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.reproduce" />
+        <item itemvalue="Python.application" />
+        <item itemvalue="Python.test_ensemble" />
+        <item itemvalue="Python.train_model" />
         <item itemvalue="Python.dataset (1)" />
         <item itemvalue="Python.dataset" />
-        <item itemvalue="Python.visualization" />
-        <item itemvalue="Python.raw_processor" />
       </list>
     </recent_temporary>
   </component>
@@ -260,7 +278,9 @@
       <workItem from="1596473249087" duration="2821000" />
       <workItem from="1596540176951" duration="197000" />
       <workItem from="1596627552654" duration="3310000" />
-      <workItem from="1600577474649" duration="13031000" />
+      <workItem from="1600577474649" duration="13757000" />
+      <workItem from="1600755954164" duration="74000" />
+      <workItem from="1601517066787" duration="5945000" />
     </task>
     <servers />
   </component>
@@ -288,31 +308,39 @@
       <screen x="0" y="30" width="1500" height="970" />
     </state>
     <state x="232" y="90" key="#Project_Structure/0.30.1500.970@0.30.1500.970" timestamp="1596474444963" />
+    <state x="587" y="383" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601519545005">
+      <screen x="0" y="30" width="1714" height="1113" />
+    </state>
+    <state x="587" y="383" key="#com.intellij.fileTypes.FileTypeChooser/0.30.1714.1113@0.30.1714.1113" timestamp="1601519545005" />
     <state x="106" y="264" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596474905948">
       <screen x="0" y="30" width="1500" height="970" />
     </state>
     <state x="106" y="264" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.30.1500.970@0.30.1500.970" timestamp="1596474905948" />
-    <state width="1715" height="252" key="GridCell.Tab.0.bottom" timestamp="1600590074349">
+    <state x="-1500" y="1035" key="FileChooserDialogImpl" timestamp="1600756025689">
+      <screen x="-2560" y="576" width="2560" height="1410" />
+    </state>
+    <state x="-1500" y="1035" key="FileChooserDialogImpl/0.30.1714.1113/-2560.576.2560.1410@-2560.576.2560.1410" timestamp="1600756025689" />
+    <state width="1715" height="242" key="GridCell.Tab.0.bottom" timestamp="1601523248238">
       <screen x="0" y="30" width="1714" height="1113" />
     </state>
-    <state width="1715" height="252" key="GridCell.Tab.0.bottom/0.30.1714.1113@0.30.1714.1113" timestamp="1600590074349" />
-    <state width="1715" height="252" key="GridCell.Tab.0.center" timestamp="1600590074349">
+    <state width="1715" height="242" key="GridCell.Tab.0.bottom/0.30.1714.1113@0.30.1714.1113" timestamp="1601523248238" />
+    <state width="1715" height="242" key="GridCell.Tab.0.center" timestamp="1601523248238">
       <screen x="0" y="30" width="1714" height="1113" />
     </state>
-    <state width="1715" height="252" key="GridCell.Tab.0.center/0.30.1714.1113@0.30.1714.1113" timestamp="1600590074349" />
-    <state width="1715" height="252" key="GridCell.Tab.0.left" timestamp="1600590074349">
+    <state width="1715" height="242" key="GridCell.Tab.0.center/0.30.1714.1113@0.30.1714.1113" timestamp="1601523248238" />
+    <state width="1715" height="242" key="GridCell.Tab.0.left" timestamp="1601523248238">
       <screen x="0" y="30" width="1714" height="1113" />
     </state>
-    <state width="1715" height="252" key="GridCell.Tab.0.left/0.30.1714.1113@0.30.1714.1113" timestamp="1600590074349" />
-    <state width="1715" height="252" key="GridCell.Tab.0.right" timestamp="1600590074349">
+    <state width="1715" height="242" key="GridCell.Tab.0.left/0.30.1714.1113@0.30.1714.1113" timestamp="1601523248238" />
+    <state width="1715" height="242" key="GridCell.Tab.0.right" timestamp="1601523248238">
       <screen x="0" y="30" width="1714" height="1113" />
     </state>
-    <state width="1715" height="252" key="GridCell.Tab.0.right/0.30.1714.1113@0.30.1714.1113" timestamp="1600590074349" />
-    <state x="338" y="161" key="SettingsEditor" timestamp="1600584642059">
+    <state width="1715" height="242" key="GridCell.Tab.0.right/0.30.1714.1113@0.30.1714.1113" timestamp="1601523248238" />
+    <state x="338" y="161" key="SettingsEditor" timestamp="1601522266696">
       <screen x="0" y="30" width="1714" height="1113" />
     </state>
     <state x="-170" y="57" key="SettingsEditor/0.30.1500.970@0.30.1500.970" timestamp="1596476692161" />
-    <state x="338" y="161" key="SettingsEditor/0.30.1714.1113@0.30.1714.1113" timestamp="1600584642059" />
+    <state x="338" y="161" key="SettingsEditor/0.30.1714.1113@0.30.1714.1113" timestamp="1601522266696" />
     <state x="83" y="115" width="582" height="804" key="find.popup" timestamp="1596474811965">
       <screen x="0" y="30" width="1500" height="970" />
     </state>
@@ -337,7 +365,7 @@
     <SUITE FILE_PATH="coverage/Strabismus_Recognition$pytorch_train.coverage" NAME="pytorch_train Coverage Results" MODIFIED="1585560867436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Strabismus_Final$dataset_generator.coverage" NAME="dataset_generator Coverage Results" MODIFIED="1583922463620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/Strabismus_Final$graph_drawer.coverage" NAME="graph_drawer Coverage Results" MODIFIED="1584003724473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
-    <SUITE FILE_PATH="coverage/strabismus_recognition$reproduce.coverage" NAME="reproduce Coverage Results" MODIFIED="1600590074338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/strabismus_recognition$reproduce.coverage" NAME="reproduce Coverage Results" MODIFIED="1601518135786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Strabismus_Final$pytorch_test3.coverage" NAME="pytorch_test3 Coverage Results" MODIFIED="1583987334433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Strabismus_Recognition$sklearn_test.coverage" NAME="sklearn_test Coverage Results" MODIFIED="1584217356887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Strabismus_Recognition$dataset_generator.coverage" NAME="dataset_generator Coverage Results" MODIFIED="1585559732802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
@@ -346,6 +374,8 @@
     <SUITE FILE_PATH="coverage/Strabismus_Recognition$graph_drawer.coverage" NAME="graph_drawer Coverage Results" MODIFIED="1585560905201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/Strabismus_Recognition$visualization.coverage" NAME="visualization Coverage Results" MODIFIED="1588172867562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/strabismus_recognition$data_loader.coverage" NAME="data_loader Coverage Results" MODIFIED="1596628590948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/strabismus_recognition$application.coverage" NAME="application Coverage Results" MODIFIED="1601523248231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/strabismus_recognition$test_ensemble.coverage" NAME="test_ensemble Coverage Results" MODIFIED="1601520644881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Strabismus_Recognition$pytorch_test.coverage" NAME="pytorch_test Coverage Results" MODIFIED="1584224656268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Strabismus_Recognition$sklearn_train.coverage" NAME="sklearn_train Coverage Results" MODIFIED="1585560359617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Strabismus_Final$sklearn_test__1_.coverage" NAME="sklearn_test (1) Coverage Results" MODIFIED="1583937646071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

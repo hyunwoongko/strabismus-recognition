@@ -67,7 +67,8 @@ class Dataset(object):
         self.root_dir = self.root_dir + _ if self.root_dir[-1] != _ else self.root_dir
         filetype = "fixations" if self.short else "all_gaze"
         raw_data_dir = self.root_dir + "data{_}{type}{_}".format(_=_, type=patient_type)
-        listdir = (_ for _ in os.listdir(raw_data_dir) if filetype in _)
+        listdir = [_ for _ in os.listdir(raw_data_dir) if filetype in _]
+        random.shuffle(listdir)
 
         dataset, existing_names = [], [""]
         for filename in listdir:
