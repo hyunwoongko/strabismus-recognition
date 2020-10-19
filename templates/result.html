@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>DN 사시진단 프로그램</title>
+
+    <link href="../static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <link href="../static/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <script src="../static/vendor/jquery/jquery.min.js"></script>
+    <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../static/js/sb-admin-2.min.js"></script>
+    <script src="../static/js/include_html.js"></script>
+    <script src="../static/vendor/jquery/jquery.min.js"></script>
+    <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../static/js/sb-admin-2.min.js"></script>
+    <script src="../static/vendor/chart.js/Chart.min.js"></script>
+</head>
+
+<body id="page-top">
+
+<div id="wrapper">
+    <!--Nav bar-->
+    <nav include-html="{{ url_for('navbar') }}"></nav>
+    <script>includeHTML()</script>
+    <meta id="meta_data"
+          data-port="{{ port }}"
+          data-output_list="{{ output_list }}"
+          data-img_file_name="{{ img_file_name }}">
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            <!-- Header -->
+            <nav include-html="{{ url_for('header') }}"></nav>
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <h2>환자 진단결과</h2>
+                환자 진단 결과가 아래에 표시 됩니다.
+                <hr width="1000%">
+                <div align="center">
+
+
+                    <div class="col-xl-7 col-lg-5" style="float: left">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">원형 차트</h6>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body" style="text-align: center">
+                                <div class="chart-pie pt-4">
+                                    <canvas id="myPieChart"></canvas>
+                                </div>
+                                <hr>
+                                인공지능 사시 진단 결과입니다.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-5" style="float: left">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">시각화 차트</h6>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body" style="text-align: center">
+                                <img src="../static/cache/{{ img_file_name }}">
+                                <hr>
+                                시간에 따른 양 동공의 위치 차이(Right - Left)를 시각화한 자료입니다.
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+                        Chart.defaults.global.defaultFontColor = '#858796';
+                        const output_list = $("#meta_data")
+                            .data("output_list");
+
+                        let normal = 0;
+                        let abnormal = 0;
+
+                        for (let data of output_list) {
+                            if (data === 0) {
+                                normal++;
+                            } else {
+                                abnormal++;
+                            }
+                        }
+
+                        // Pie Chart Example
+                        let ctx = document.getElementById("myPieChart");
+                        let myPieChart = new Chart(ctx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: ["정상", "사시"],
+                                datasets: [{
+                                    data: [normal, abnormal],
+                                    backgroundColor: ['#4e73df', '#1cc88a'],
+                                    hoverBackgroundColor: ['#2e59d9', '#17a673'],
+                                    hoverBorderColor: "rgba(234, 236, 244, 1)",
+                                }],
+                            },
+                            options: {
+                                maintainAspectRatio: false,
+                                tooltips: {
+                                    backgroundColor: "rgb(255,255,255)",
+                                    bodyFontColor: "#858796",
+                                    borderColor: '#dddfeb',
+                                    borderWidth: 1,
+                                    xPadding: 15,
+                                    yPadding: 15,
+                                    displayColors: false,
+                                    caretPadding: 10,
+                                },
+                                legend: {
+                                    display: false
+                                },
+                                cutoutPercentage: 80,
+                            },
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer include-html="{{ url_for('footer') }}"></footer>
+    </div>
+</div>
+</body>
+
+
+</html>

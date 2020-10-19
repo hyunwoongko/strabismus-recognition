@@ -34,7 +34,7 @@
     --info: #36b9cc;
     --warning: #f6c23e;
     --danger: #e74a3b;
-    --light: #f8f9fc;
+    --light: #ffffff;
     --dark: #5a5c69;
     --breakpoint-xs: 0;
     --breakpoint-sm: 576px;
@@ -2669,8 +2669,8 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .btn-light {
     color: #3a3b45;
-    background-color: #f8f9fc;
-    border-color: #f8f9fc
+    background-color: #ffffff;
+    border-color: #ffffff
 }
 
 .btn-light:hover {
@@ -2688,8 +2688,8 @@ a.btn.disabled, fieldset:disabled a.btn {
 
 .btn-light.disabled, .btn-light:disabled {
     color: #3a3b45;
-    background-color: #f8f9fc;
-    border-color: #f8f9fc
+    background-color: #ffffff;
+    border-color: #ffffff
 }
 
 .btn-light:not(:disabled):not(.disabled).active, .btn-light:not(:disabled):not(.disabled):active, .show > .btn-light.dropdown-toggle {
@@ -2918,14 +2918,14 @@ a.btn.disabled, fieldset:disabled a.btn {
 }
 
 .btn-outline-light {
-    color: #f8f9fc;
-    border-color: #f8f9fc
+    color: #ffffff;
+    border-color: #ffffff
 }
 
 .btn-outline-light:hover {
     color: #3a3b45;
-    background-color: #f8f9fc;
-    border-color: #f8f9fc
+    background-color: #ffffff;
+    border-color: #ffffff
 }
 
 .btn-outline-light.focus, .btn-outline-light:focus {
@@ -2933,14 +2933,14 @@ a.btn.disabled, fieldset:disabled a.btn {
 }
 
 .btn-outline-light.disabled, .btn-outline-light:disabled {
-    color: #f8f9fc;
+    color: #ffffff;
     background-color: transparent
 }
 
 .btn-outline-light:not(:disabled):not(.disabled).active, .btn-outline-light:not(:disabled):not(.disabled):active, .show > .btn-outline-light.dropdown-toggle {
     color: #3a3b45;
-    background-color: #f8f9fc;
-    border-color: #f8f9fc
+    background-color: #ffffff;
+    border-color: #ffffff
 }
 
 .btn-outline-light:not(:disabled):not(.disabled).active:focus, .btn-outline-light:not(:disabled):not(.disabled):active:focus, .show > .btn-outline-light.dropdown-toggle:focus {
@@ -3270,7 +3270,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 .dropdown-item:focus, .dropdown-item:hover {
     color: #2e2f37;
     text-decoration: none;
-    background-color: #f8f9fc
+    background-color: #ffffff
 }
 
 .dropdown-item.active, .dropdown-item:active {
@@ -4515,7 +4515,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 .card-header {
     padding: .75rem 1.25rem;
     margin-bottom: 0;
-    background-color: #f8f9fc;
+    background-color: #ffffff;
     border-bottom: 1px solid #e3e6f0
 }
 
@@ -4529,7 +4529,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 
 .card-footer {
     padding: .75rem 1.25rem;
-    background-color: #f8f9fc;
+    background-color: #ffffff;
     border-top: 1px solid #e3e6f0
 }
 
@@ -4937,7 +4937,7 @@ a.badge-danger.focus, a.badge-danger:focus {
 
 .badge-light {
     color: #3a3b45;
-    background-color: #f8f9fc
+    background-color: #ffffff
 }
 
 a.badge-light:focus, a.badge-light:hover {
@@ -5214,7 +5214,7 @@ a.badge-dark.focus, a.badge-dark:focus {
     z-index: 1;
     color: #6e707e;
     text-decoration: none;
-    background-color: #f8f9fc
+    background-color: #ffffff
 }
 
 .list-group-item-action:active {
@@ -6428,7 +6428,7 @@ a.bg-danger:focus, a.bg-danger:hover, button.bg-danger:focus, button.bg-danger:h
 }
 
 .bg-light {
-    background-color: #f8f9fc !important
+    background-color: #ffffff !important
 }
 
 a.bg-light:focus, a.bg-light:hover, button.bg-light:focus, button.bg-light:hover {
@@ -6516,7 +6516,7 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
 }
 
 .border-light {
-    border-color: #f8f9fc !important
+    border-color: #ffffff !important
 }
 
 .border-dark {
@@ -9773,7 +9773,7 @@ a.text-danger:focus, a.text-danger:hover {
 }
 
 .text-light {
-    color: #f8f9fc !important
+    color: #ffffff !important
 }
 
 a.text-light:focus, a.text-light:hover {
@@ -9936,7 +9936,7 @@ a:focus {
 }
 
 #wrapper #content-wrapper {
-    background-color: #f8f9fc;
+    background-color: #ffffff;
     width: 100%;
     overflow-x: hidden
 }
@@ -10068,8 +10068,8 @@ a:focus {
 }
 
 .bg-gradient-light {
-    background-color: #f8f9fc;
-    background-image: linear-gradient(180deg, #f8f9fc 10%, #c2cbe5 100%);
+    background-color: #ffffff;
+    background-image: linear-gradient(180deg, #ffffff 10%, #c2cbe5 100%);
     background-size: cover
 }
 
@@ -10080,7 +10080,7 @@ a:focus {
 }
 
 .bg-gray-100 {
-    background-color: #f8f9fc !important
+    background-color: #ffffff !important
 }
 
 .bg-gray-200 {
@@ -10128,7 +10128,7 @@ a:focus {
 }
 
 .text-gray-100 {
-    color: #f8f9fc !important
+    color: #ffffff !important
 }
 
 .text-gray-200 {
@@ -10221,11 +10221,11 @@ a:focus {
 }
 
 .border-left-light {
-    border-left: .25rem solid #f8f9fc !important
+    border-left: .25rem solid #ffffff !important
 }
 
 .border-bottom-light {
-    border-bottom: .25rem solid #f8f9fc !important
+    border-bottom: .25rem solid #ffffff !important
 }
 
 .border-left-dark {
@@ -11225,7 +11225,7 @@ form.user .btn-user {
     text-shadow: -1px 0 #e74a3b;
     top: 0;
     color: #5a5c69;
-    background: #f8f9fc;
+    background: #ffffff;
     overflow: hidden;
     clip: rect(0, 900px, 0, 0);
     animation: noise-anim 2s infinite linear alternate-reverse
@@ -11370,7 +11370,7 @@ form.user .btn-user {
     text-shadow: 1px 0 #472903;
     top: 0;
     color: #5a5c69;
-    background: #f8f9fc;
+    background: #ffffff;
     overflow: hidden;
     clip: rect(0, 900px, 0, 0);
     animation: noise-anim-2 3s infinite linear alternate-reverse
@@ -11398,33 +11398,4 @@ body.sidebar-toggled footer.sticky-footer {
 
 .loading-text {
     display: none;
-}
-
-#brainqa_short_answer_block,
-#pororo_paraphrase_block,
-#pororo_ner_block,
-#pororo_sentiment_analysis_block {
-    width: 60% !important;
-}
-
-#pororo_paraphrase_prompt,
-#pororo_ner_prompt,
-#pororo_sentiment_analysis_prompt {
-    height: 50%;
-    padding-bottom: 5rem;
-    resize: none;
-}
-
-#brainqa_short_answer_prompt {
-    height: 50%;
-    padding-bottom: 15rem;
-    resize: none;
-}
-
-#brainqa_short_answer_button,
-#pororo_paraphrase_button,
-#pororo_ner_button,
-#pororo_sentiment_analysis_button {
-    width: 20%;
-    height: 10%;
 }

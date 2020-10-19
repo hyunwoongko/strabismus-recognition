@@ -20,6 +20,7 @@ class Dataset(object):
             short: Optional[bool] = False,
             sampling_rate: Optional[float] = 10.0,
             outlier_threshold: Optional[float] = 0.025,
+            max_len: int = 99
     ) -> None:
         """
         Constructor of Dataset class
@@ -30,13 +31,20 @@ class Dataset(object):
             short (bool): load the compressed data or not compressed data. (default: False)
             sampling_rate (float): how many time steps the data will be averaged into one step (default: 10.0)
             outlier_threshold (float): minimum pupil movement to be treated as an outlier (default: 0.025)
+            max_len (int): max sequence length (default: 99)
         """
 
         self.root_dir = root_dir
+        self._ = "\\" if platform.system() == "Windows" else "/"
+        self.root_dir = (
+            self.root_dir + self._ if self.root_dir[-1] != self._ else self.root_dir
+        )
+
         self.ratio = ratio
         self.short = short
         self.sampling_rate = sampling_rate
         self.outlier_threshold = outlier_threshold
+        self.max_len = max_len
 
     def _load_data(self, patient_type: str, label: int) -> List[Dict]:
         """
@@ -63,10 +71,10 @@ class Dataset(object):
             ]
         """
 
-        _ = "\\" if platform.system() == "Windows" else "/"
-        self.root_dir = self.root_dir + _ if self.root_dir[-1] != _ else self.root_dir
         filetype = "fixations" if self.short else "all_gaze"
-        raw_data_dir = self.root_dir + "data{_}{type}{_}".format(_=_, type=patient_type)
+        raw_data_dir = self.root_dir + "data{_}{type}{_}".format(
+            _=self._, type=patient_type
+        )
         listdir = [_ for _ in os.listdir(raw_data_dir) if filetype in _]
         random.shuffle(listdir)
 
@@ -193,9 +201,9 @@ class Dataset(object):
 
         # 6. Abstract & Gaining
         data_sampled = np.array(data_sampled)
-        data_abs_gained = abs(data_sampled * 100 ** 2)
+        data_viz = data_sampled * 100 ** 2
 
-        return {"data": data_abs_gained, "label": sample["label"]}
+        return {"data": abs(data_viz), "label": sample["label"], "data_viz": data_viz}
 
     def _pad_sequence(self, dataset: List[Dict]) -> List[Dict]:
         """
@@ -218,15 +226,12 @@ class Dataset(object):
             ]
         """
 
-        data = [sample["data"] for sample in dataset]
-        max_len = len(max(data, key=len))
         padded_dataset = []
-
         for sample in dataset:
             label = sample["label"]
             data = sample["data"]
 
-            padding = np.zeros(max_len)
+            padding = np.zeros(self.max_len)
             padding[: len(data)] = data
             sample = {"data": padding, "label": label}
             padded_dataset.append(sample)
@@ -276,6 +281,46 @@ class Dataset(object):
 
         return train_feature, train_label, test_feature, test_label
 
+    def eval(self, filepath: str):
+        """
+        only support one data file.
+        to make dataset for real world evaluation.
+
+        Args:
+            filepath (str): evaluation data file path
+            model_size (int): model input size
+
+        Returns:
+            data dictionary 'data': sequence},
+        """
+
+        file = pd.read_csv(filepath)
+        MEDIA_ID = file["MEDIA_ID"].unique().tolist()
+
+        if len(MEDIA_ID) < 2:
+            # Excludes data from patients who haven't alternative cover testing.
+            # In other words, excludes all patient data on only 9-point testing.
+            # - first MEDIA_ID: 9 point testing
+            # - second MEDIA_ID: alternative cover testing
+            return None
+
+        file = file[file["MEDIA_ID"] == MEDIA_ID[-1]]
+        # only load alternative cover testing data (last MEDIA_ID)
+
+        data = np.c_[file.LPCX, file.RPCX, file.LPV, file.RPV]
+        columns = ["LPCX", "RPCX", "LPV", "RPV"]
+        data = pd.DataFrame(data=data, columns=columns)
+        # L/R + PCX : Left/Right pupil movement sequence data
+        # L/R + PV : Whether the (L/R + PCX) data of corresponding time step is valid or not
+
+        data = {"data": data, "label": None}
+        data = [self._preprocess(data)]
+        data_viz = data[0]["data_viz"]
+        data = self._pad_sequence(data)[0]["data"]
+        data = np.expand_dims(data, 0)
+
+        return data, data_viz
+
     def __call__(self, patient_types: Tuple, labels: Tuple):
         """
         caller method of dataset.
@@ -292,9 +337,11 @@ class Dataset(object):
             test labels (np.ndarray): testing labels
         """
 
-        assert len(patient_types) == len(labels), \
-            "length of patient_types labels must be same. you inputted {p} patient_types and {l} labels" \
-                .format(p=len(patient_types), l=len(labels))
+        assert len(patient_types) == len(
+            labels
+        ), "length of patient_types labels must be same. you inputted {p} patient_types and {l} labels".format(
+            p=len(patient_types), l=len(labels)
+        )
 
         datasets = []
         for p_type, label in zip(patient_types, labels):

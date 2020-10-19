@@ -18,6 +18,7 @@
     <script src="../static/vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="../static/js/sb-admin-2.min.js"></script>
     <script src="../static/js/include_html.js"></script>
+    <script src="../static/js/view_effect.js"></script>
 </head>
 
 <body id="page-top">
@@ -26,6 +27,7 @@
     <!--Nav bar-->
     <nav include-html="{{ url_for('navbar') }}"></nav>
     <script>includeHTML()</script>
+    <meta id="meta_data" data-port="{{ port }}">
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -35,7 +37,24 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
+                <h2>환자 진단하기</h2>
+                아래 버튼을 눌러서 데이터 파일 (환자명_all_gaze.csv)를 업로드 해주세요.
+                <hr width="1000%">
+                <br>
+                <br>
+                <div align="center">
+                    <form id="recognize_form"
+                          action="http://localhost:{{ port }}/file_upload"
+                          method="POST" enctype="multipart/form-data">
+                        <input type="file" name="file"/>
+                        <input type="submit" onclick="loadingEffect()">
+                    </form>
 
+                    <img src="../static/img/loading.gif" class="loading">
+                    <h5 class="loading-text">
+                        로딩 중입니다...
+                    </h5>
+                </div>
             </div>
         </div>
 

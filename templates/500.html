@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>DN 사시진단 프로그램</title>
+    <title>SIGNALS - Demoable</title>
 
     <link href="../static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -32,15 +32,16 @@
         <div id="content">
             <!-- Header -->
             <nav include-html="{{ url_for('header') }}"></nav>
+
             <!-- Begin Page Content -->
-            <div class="container-fluid" style="width: max-content; margin-top: 15%">
-                <p align="center">
-                    <img src="../static/img/dn.png" width="30%">
-                    <br>
-                <p style="font-size: large" align="center">
-                    "DN 사시진단 프로그램은 머신러닝 알고리즘으로 사시를 정밀하게 진단해냅니다."
-                </p>
-                </p>
+            <div class="container-fluid">
+                <div class="text-center">
+                    <div class="error mx-auto" data-text="500">500</div>
+                    <p class="lead text-gray-800 mb-5">Error Occurs</p>
+                    <p class="text-gray-500 mb-0">오류가 발생했습니다.</p>
+                    <a href="{{ url_for('index') }}">&larr; 메인으로 돌아가기</a>
+                </div>
+
             </div>
         </div>
 
