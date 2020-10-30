@@ -1,6 +1,6 @@
-﻿# Strabismus Recognizer 👀
+# Strabismus Recognizer 👀
 본 프로그램은 디엔 인공지능 기반 사시진단 소프트웨어입니다.
-<br><br>
+<br><br><br>
 
 ## 1. 파이썬 설치
 - 본 프로그램은 파이썬을 기반으로 작동합니다.
@@ -18,11 +18,11 @@
 - 위에서 말했듯이 Add Python 3.7 to Path를 꼭 체크(V) 해주세요!!
 - 64비트 컴퓨터 : [설치 링크](https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe)
 - 32비트 컴퓨터 : [설치 링크](https://www.python.org/ftp/python/3.7.3/python-3.7.3.exe)
-<br><br>
+<br><br><br>
 
 ## 2. 사시진단 프로그램 설치
 - 폴더에 동봉된 `install.bat`을 더블클릭하면 사시 진단 프로그램이 설치됩니다.
-<br><br>
+<br><br><br>
 
 ## 3. 서버 실행
 - 폴더에 동봉된 `start_server.bat`을 더블클릭하면 사시 진단 서버가 실행됩니다. 
@@ -33,7 +33,7 @@
 - 기본 포트는 8595로 지정되어있는데, 변경하고 싶을 때만 아래를 수행합니다. 
 - 일반적으로 이 작업을 수행할 필요는 없습니다.
 - `start_server.bat`을 우클릭하고 [편집]을 누른 뒤에 `cmd/k python application.py --port=8595`에서 port= 뒷부분에 원하는 포트를 적으면 됩니다.
-<br><br>
+<br><br><br>
 
 ## 4. 웹사이트 접속하기
 - 크롬 등의 웹브라우저를 열고 `http://localhost:8595/` 를 입력하시면 웹사이트에 접속할 수 있습니다.
