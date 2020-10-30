@@ -15,7 +15,6 @@ class Dataset(object):
 
     def __init__(
             self,
-            root_dir: str,
             ratio: Optional[float] = 0.8,
             short: Optional[bool] = False,
             sampling_rate: Optional[float] = 10.0,
@@ -26,7 +25,6 @@ class Dataset(object):
         Constructor of Dataset class
 
         Args:
-            root_dir (str): project root directory path
             ratio (float): train & test dataset ratio (default: 0.8)
             short (bool): load the compressed data or not compressed data. (default: False)
             sampling_rate (float): how many time steps the data will be averaged into one step (default: 10.0)
@@ -34,12 +32,7 @@ class Dataset(object):
             max_len (int): max sequence length (default: 99)
         """
 
-        self.root_dir = root_dir
         self._ = "\\" if platform.system() == "Windows" else "/"
-        self.root_dir = (
-            self.root_dir + self._ if self.root_dir[-1] != self._ else self.root_dir
-        )
-
         self.ratio = ratio
         self.short = short
         self.sampling_rate = sampling_rate
@@ -72,7 +65,7 @@ class Dataset(object):
         """
 
         filetype = "fixations" if self.short else "all_gaze"
-        raw_data_dir = self.root_dir + "data{_}{type}{_}".format(
+        raw_data_dir = "data{_}{type}{_}".format(
             _=self._, type=patient_type
         )
         listdir = [_ for _ in os.listdir(raw_data_dir) if filetype in _]
@@ -288,7 +281,6 @@ class Dataset(object):
 
         Args:
             filepath (str): evaluation data file path
-            model_size (int): model input size
 
         Returns:
             data dictionary 'data': sequence},
@@ -296,14 +288,6 @@ class Dataset(object):
 
         file = pd.read_csv(filepath)
         MEDIA_ID = file["MEDIA_ID"].unique().tolist()
-
-        if len(MEDIA_ID) < 2:
-            # Excludes data from patients who haven't alternative cover testing.
-            # In other words, excludes all patient data on only 9-point testing.
-            # - first MEDIA_ID: 9 point testing
-            # - second MEDIA_ID: alternative cover testing
-            return None
-
         file = file[file["MEDIA_ID"] == MEDIA_ID[-1]]
         # only load alternative cover testing data (last MEDIA_ID)
 

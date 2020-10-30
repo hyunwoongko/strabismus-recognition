@@ -1,19 +1,20 @@
 import os
+import warnings
 
-from flask import render_template, request, jsonify
+from flask import render_template, request
+from matplotlib import pyplot as plt
 from engine.dataset import Dataset
 from engine.model import Model
-from matplotlib import pyplot as plt
+
+warnings.filterwarnings(action='ignore', category=UserWarning)
 
 
 class Server:
     """Strabismus Detection Application Server"""
 
-    def __init__(self, app, port, root_dir):
+    def __init__(self, app, port):
         self.app = app
-        self.root_dir = root_dir
         self.port = port
-
         self.front_end()
         self.back_end()
 
@@ -54,10 +55,6 @@ class Server:
         def recognize():
             return render_template("recognize.html", port=self.port)
 
-        @self.app.route("/manage")
-        def manage():
-            return render_template("manage.html")
-
         @self.app.route("/charts")
         def charts():
             return render_template("legacy/charts.html")
@@ -81,9 +78,9 @@ class Server:
 
     def recognize(self, file_name):
         model_dir = os.listdir("saved")
-        dataset = Dataset(self.root_dir)
-        dataset, data_vis = dataset.eval(self.root_dir + file_name)
-        img_file_name = self.visualize(data_vis, self.root_dir + file_name)
+        dataset = Dataset()
+        dataset, data_vis = dataset.eval(file_name)
+        img_file_name = self.visualize(data_vis, file_name)
         img_file_name = img_file_name.split("cache")
         img_file_name = img_file_name[1].replace("/", "")
 

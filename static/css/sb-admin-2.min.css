@@ -11399,3 +11399,7 @@ body.sidebar-toggled footer.sticky-footer {
 .loading-text {
     display: none;
 }
+
+.dn_navbar{
+    background-color: #472903;
+}

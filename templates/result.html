@@ -29,7 +29,7 @@
 
 <div id="wrapper">
     <!--Nav bar-->
-    <nav include-html="{{ url_for('navbar') }}"></nav>
+    <nav class="dn_navbar" include-html="{{ url_for('navbar') }}"></nav>
     <script>includeHTML()</script>
     <meta id="meta_data"
           data-port="{{ port }}"
@@ -45,16 +45,16 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <h2>환자 진단결과</h2>
-                환자 진단 결과가 아래에 표시 됩니다.
+                <li>환자 진단 결과가 아래에 표시 됩니다. 아래 두가지 차트가 제공됩니다.</li>
+                <li>사시 진단 차트 : 인공지능의 사시 진단 결과가 표시됩니다.</li>
+                <li>시각화 차트 : 시간 순으로 양 동공의 위치 차이(Right - Left)를 나타냅니다. 굴곡이 심할수록 사시입니다.</li>
                 <hr width="1000%">
                 <div align="center">
-
-
-                    <div class="col-xl-7 col-lg-5" style="float: left">
+                    <div class="col-xl-7 col-lg-5">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">원형 차트</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">사시 진단 차트</h6>
                             </div>
                             <!-- Card Body -->
                             <div class="card-body" style="text-align: center">
@@ -62,11 +62,12 @@
                                     <canvas id="myPieChart"></canvas>
                                 </div>
                                 <hr>
-                                인공지능 사시 진단 결과입니다.
+                                인공지능 사시 진단 결과입니다. <br>
+                                원형그래프 위에 마우스를 위치하면 자세한 수치를 볼 수 있습니다.
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-7 col-lg-5" style="float: left">
+                    <div class="col-xl-7 col-lg-5">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3">
@@ -74,9 +75,10 @@
                             </div>
                             <!-- Card Body -->
                             <div class="card-body" style="text-align: center">
-                                <img src="../static/cache/{{ img_file_name }}">
+                                <img src="../static/cache/{{ img_file_name }}" width="100%">
                                 <hr>
-                                시간에 따른 양 동공의 위치 차이(Right - Left)를 시각화한 자료입니다.
+                                시간에 따른 양 동공의 위치 차이(Right - Left)를 시각화한 자료입니다.  <br>
+                                굴곡이 심할 수록 사시일 가능성이 높습니다.
                             </div>
                         </div>
                     </div>
@@ -137,6 +139,4 @@
     </div>
 </div>
 </body>
-
-
 </html>

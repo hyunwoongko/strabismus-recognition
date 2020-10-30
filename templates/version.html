@@ -18,14 +18,16 @@
     <script src="../static/vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="../static/js/sb-admin-2.min.js"></script>
     <script src="../static/js/include_html.js"></script>
+    <script src="../static/js/view_effect.js"></script>
 </head>
 
 <body id="page-top">
 
 <div id="wrapper">
     <!--Nav bar-->
-    <nav include-html="{{ url_for('navbar') }}"></nav>
+    <nav class="dn_navbar" include-html="{{ url_for('navbar') }}"></nav>
     <script>includeHTML()</script>
+    <meta id="meta_data" data-port="{{ port }}">
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -35,7 +37,12 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-
+                <h2>버전 정보</h2>
+                사시진단 프로그램의 버전정보를 표시합니다.
+                <hr width="1000%">
+                <li>버전 : 0.0.1</li>
+                <li>제작 : DN & 전북대학교</li>
+                <br>
             </div>
         </div>
 

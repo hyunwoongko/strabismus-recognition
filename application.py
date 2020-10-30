@@ -1,10 +1,17 @@
+import warnings
+
 from flask import Flask
 from server import Server
+from argparse import ArgumentParser
 
-root_dir = "C:\\Users\\MY\\Github\\strabismus-recognition\\"
-port = 8080
+warnings.filterwarnings(action='ignore', category=UserWarning)
+
 app = Flask(__name__)
 
 if __name__ == '__main__':
-    server = Server(app, port=port, root_dir=root_dir)
+    parser = ArgumentParser()
+    parser.add_argument("--port", required=True)
+    args = parser.parse_args()
+
+    server = Server(app, port=args.port)
     server.run()

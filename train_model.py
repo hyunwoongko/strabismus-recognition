@@ -1,13 +1,14 @@
-import tqdm as tqdm
-
 from engine.dataset import Dataset
 from engine.model import Model
 from tqdm import tqdm
 
+import warnings
+
+warnings.filterwarnings(action='ignore', category=UserWarning)
+
 
 def train(experiment_times):
-    root_dir = "C:\\Users\\MY\\Github\\strabismus-recognition\\"
-    dataset = Dataset(root_dir=root_dir)
+    dataset = Dataset()
     model_saved = 0
 
     while model_saved != experiment_times:
@@ -17,7 +18,7 @@ def train(experiment_times):
         )
 
         model = Model(
-            model_dir=root_dir + "saved",
+            model_dir="saved",
             model_id="model_{}".format(model_saved)
         )
 

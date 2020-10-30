@@ -1,51 +1,35 @@
-﻿# *Strabismus Recognizer* 👀
-*This project is to develop strabismus diagnostic software for use in ophthalmology.*
-<br><br><br>
-
-## 1. *Project Overeview*
-![img](https://www.aao.org/image.axd?id=f0a526af-52f3-4edb-a4a5-a5d9ba8386a7&t=636486437122700000)
-*Strabismus is a condition in which the eyes do not properly align with each other when looking at an object. The eye which is focused on an object can alternate. The condition may be present occasionally or constantly. If present during a large part of childhood, it may result in amblyopia or loss of depth perception. If onset is during adulthood, it is more likely to result in double vision.*
-<br><br><br>
-
-![img](http://morancore.utah.edu/wp-content/uploads/2017/08/hu_assessment_003.jpg)
-*Strabismus is expressed in various types, and according to eye movement, it is classified into esotropia, exotropia, hypertropia and hypotropia. Currently, in ophthalmology, ophthalmologists diagnose the strabismus with the naked eye, but it is very difficult to diagnose strabismus unless a strabismus specialist. However, not all hospitals have strabismus specialists, so many ophthalmologists are currently struggling with strabismus diagnosis. So our goal is to develop software that automatically diagnoses strabismus. We are receiving data from some ophthalmologists and are thinking about using deep learning to solve this problem. We will experiment with various models such as MLP, RNN, GRU, LSTM, CNN, LSTM-CNN, Transformer and so on. and if all models do not perform well, we will construct a new model.*
-<br><br><br>
-
-##  2. *Development environment*
-* *OS : Windows 10*
-* *IDE : IntelliJ 2019.01*
-* *Language : Python 3.6*
-* *PC Specifications :*
-  * *CPU : Intel(R) Core(TM) i7-9700KF @ 3.60Ghz*
-  * *RAM : Samsung 16GB*
-  * *GPU : Nvidia RTX 2070*
-<br><br><br>
-
-##  3. *Experiments*
-
-![image](https://user-images.githubusercontent.com/38183241/70560563-2d915900-1bcc-11ea-8dfd-b1f908dfdd67.png)
-
-*Random cross validation was conducted for the experiment. 
-Firstly, we ramdomly select 178 patients' data (90%) 
-from a total of 198 patients and proceed model training. 
-After that, 20 patients' data (10%) that have not been trained are selected for diagnosis. 
-In each experiment, we create and experiment with a total of 10 new models, 
-and evaluate the minimum and average accuracy of the 10 models as the 
-performance of the model.* 
+﻿# Strabismus Recognizer 👀
+본 프로그램은 디엔 인공지능 기반 사시진단 소프트웨어입니다.
 <br><br>
 
-## 4. *Licence*
+## 1. 파이썬 설치
+자신의 PC에 맞는 파이썬을 설치해주세요. (내 컴퓨터를 마우스 우클릭 → 속성을 보면 몇 bit 컴퓨터인지 확인할 수 있습니다.)
 
-    Copyright 2019 CBNU CS Dept, AI/Robot LAB.
+#### 주의 (WARNING) !!
+![](image/0.jpg)
+- Add Python 3.7 to Path를 반드시 체크하고 설치해야합니다. (그렇지 않을 경우 직접 환경변수를 등록해야하는데 꽤 복잡합니다.)
+<br><br>
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+#### 설치 링크 
+- 본 문서는 파이썬 버전 3.7.3을 기준으로 작성되었습니다.
+- 위에서 말했듯이 Add Python 3.7 to Path를 꼭 체크(V) 해주세요!!
+- 64비트 컴퓨터 : [설치 링크](https://www.python.org/ftp/python/3.7.3/python-3.7.3-amd64.exe)
+- 32비트 컴퓨터 : [설치 링크](https://www.python.org/ftp/python/3.7.3/python-3.7.3.exe)
+<br><br>
 
-    http://www.apache.org/licenses/LICENSE-2.0
+## 2. 사시진단 프로그램 설치
+파이썬이 제대로 설치되었다는 가정 하에 폴더에 동봉된 `install.bat`을 더블클릭하면 사시 진단 프로그램이 설치됩니다.
+<br><br>
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+## 3. 서버 실행
+사시진단 프로그램이 모두 설치되었으면 폴더에 동봉된 `start_server.bat`을 더블클릭하면 사시 진단 서버가 켜집니다.
+<br><br>
+
+#### 포트 변경을 원한다면 (Optional)
+- 기본 포트는 8595로 지정되어있는데, 변경하고 싶을 때만 아래를 수행합니다. (일반적으로 이 작업을 수행할 필요는 없습니다.)
+- `start_server.bat`을 우클릭하고 [편집]을 누른 뒤에 `cmd/k python application.py --port=8595`에서 port= 뒷부분에 원하는 포트를 적으면 됩니다.
+<br><br>
+
+## 4. 웹사이트 접속하기
+- 크롬 등의 웹브라우저를 열고 `http://localhost:8595/` 를 입력하시면 웹사이트에 접속할 수 있습니다.
+- 만약 포트번호를 변경하셨다면 :8595를 변경하신 포트로 변경하시면 접속할 수 있습니다.

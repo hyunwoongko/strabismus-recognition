@@ -3,10 +3,13 @@ from engine.dataset import Dataset
 from engine.model import Model
 from tqdm import tqdm
 
+import warnings
+
+warnings.filterwarnings(action='ignore', category=UserWarning)
+
 
 def test(experiment_times):
-    root_dir = "C:\\Users\\MY\\Github\\strabismus-recognition\\"
-    dataset = Dataset(root_dir=root_dir)
+    dataset = Dataset()
     train_features, train_labels, test_features, test_labels = dataset(
         patient_types=('normal', 'esotropia', 'exotropia'),
         labels=(0, 1, 1)
@@ -15,7 +18,7 @@ def test(experiment_times):
     prediction = test_labels * 0
     for i in tqdm(range(experiment_times)):
         model = Model(
-            model_dir=root_dir + "saved",
+            model_dir="saved",
             model_id="model_{}".format(i)
         )
 

@@ -25,7 +25,7 @@
 
 <div id="wrapper">
     <!--Nav bar-->
-    <nav include-html="{{ url_for('navbar') }}"></nav>
+    <nav class="dn_navbar" include-html="{{ url_for('navbar') }}"></nav>
     <script>includeHTML()</script>
     <meta id="meta_data" data-port="{{ port }}">
 
@@ -38,7 +38,9 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <h2>환자 진단하기</h2>
-                아래 버튼을 눌러서 데이터 파일 (환자명_all_gaze.csv)를 업로드 해주세요.
+                <li>파일 선택 버튼을 눌러서 파일을 선택하고 제출버튼을 눌러주세요.</li>
+                <li>데이터 파일은 반드시 Gaze Point 제품으로부터 추출된 것이여야합니다.</li>
+                <li>반드시 all_gaze.csv 파일을 입력해야합니다. (fixation.csv 사용 금지)</li>
                 <hr width="1000%">
                 <br>
                 <br>
