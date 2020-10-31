@@ -1,6 +1,8 @@
 import os
 import platform
 import random
+from io import BytesIO
+
 import numpy as np
 import pandas as pd
 
@@ -75,7 +77,6 @@ class Dataset(object):
         for filename in listdir:
             file = pd.read_csv(raw_data_dir + filename)
             MEDIA_ID = file["MEDIA_ID"].unique().tolist()
-
             if len(MEDIA_ID) < 2:
                 # Excludes data from patients who haven't alternative cover testing.
                 # In other words, excludes all patient data on only 9-point testing.
@@ -286,11 +287,10 @@ class Dataset(object):
             data dictionary 'data': sequence},
         """
 
-        file = pd.read_csv(filepath)
+        file = pd.read_csv(filepath, encoding='utf-8')
         MEDIA_ID = file["MEDIA_ID"].unique().tolist()
         file = file[file["MEDIA_ID"] == MEDIA_ID[-1]]
         # only load alternative cover testing data (last MEDIA_ID)
-
         data = np.c_[file.LPCX, file.RPCX, file.LPV, file.RPV]
         columns = ["LPCX", "RPCX", "LPV", "RPV"]
         data = pd.DataFrame(data=data, columns=columns)

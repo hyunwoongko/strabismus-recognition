@@ -1,0 +1,1 @@
+cmd/k python train_model.py

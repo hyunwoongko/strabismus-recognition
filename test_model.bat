@@ -1,0 +1,1 @@
+cmd/k python test_model.py
