@@ -1,4 +1,4 @@
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 from engine.dataset import Dataset
 from engine.model import Model
 from tqdm import tqdm
@@ -32,8 +32,15 @@ def test(experiment_times):
         else:
             result.append(0)
 
-    score = accuracy_score(test_labels, result)
-    return score
+    acc = accuracy_score(test_labels, result)
+    prc = precision_score(test_labels, result)
+    rec = recall_score(test_labels, result)
+    f1 = f1_score(test_labels, result)
+
+    return {"accuracy": acc,
+            "precision": prc,
+            "recall": rec,
+            "f1-score": f1}
 
 
 if __name__ == '__main__':
