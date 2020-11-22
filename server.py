@@ -1,13 +1,14 @@
 import os
 import warnings
+import matplotlib
 
 from flask import render_template, request
 from matplotlib import pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
-
 from engine.dataset import Dataset
 from engine.model import Model
 
+matplotlib.use('agg')
 warnings.filterwarnings(action="ignore", category=UserWarning)
 
 
