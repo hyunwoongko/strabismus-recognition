@@ -21,7 +21,9 @@ class Dataset(object):
             short: Optional[bool] = False,
             sampling_rate: Optional[float] = 10.0,
             outlier_threshold: Optional[float] = 0.025,
-            max_len: int = 99
+            max_len: int = 99,
+            do_preprocess: bool = True,
+            ignore_duplicate_patient: bool = False
     ) -> None:
         """
         Constructor of Dataset class
@@ -40,6 +42,8 @@ class Dataset(object):
         self.sampling_rate = sampling_rate
         self.outlier_threshold = outlier_threshold
         self.max_len = max_len
+        self.do_preprocess = do_preprocess
+        self.ignore_duplicate_patient = ignore_duplicate_patient
 
     def _load_data(self, patient_type: str, label: int) -> List[Dict]:
         """
@@ -52,6 +56,7 @@ class Dataset(object):
         Args:
             patient_type (str): type of strabismus (e.g. 'esotropia', 'exotropia')
             label (int): label for training (e.g. normal: 0, exotropia: 1)
+            ignore_same_name (bool): ignore same name sample to prevent overfitting
 
         Returns:
             list of data dictionary (List[Dict])
@@ -77,6 +82,7 @@ class Dataset(object):
         for filename in listdir:
             file = pd.read_csv(raw_data_dir + filename)
             MEDIA_ID = file["MEDIA_ID"].unique().tolist()
+
             if len(MEDIA_ID) < 2:
                 # Excludes data from patients who haven't alternative cover testing.
                 # In other words, excludes all patient data on only 9-point testing.
@@ -84,9 +90,9 @@ class Dataset(object):
                 # - second MEDIA_ID: alternative cover testing
                 continue
 
-            if filename[:3] in existing_names:
-                # In general, Korean names are 3 letters long.
-                # Data of the name once included is not included again.
+            if self.ignore_duplicate_patient and filename[:3] in existing_names:
+                # Conduct an experiment to check if collecting data
+                # from one patient multiple times causes performance problems.(e.g. overfitting)
                 continue
 
             file = file[file["MEDIA_ID"] == MEDIA_ID[-1]]
@@ -167,6 +173,9 @@ class Dataset(object):
         valid = data["LPV"] + data["RPV"]
         difference = (rpcx - lpcx).tolist()
 
+        if not self.do_preprocess:
+            return {"data": difference, "label": sample["label"]}
+
         data_cleaned = []
         mean = sum(difference) / len(difference)
         for i, (d, v) in enumerate(zip(difference, valid)):
@@ -235,7 +244,7 @@ class Dataset(object):
     def _make_dataset(
             self,
             dataset: List[Dict],
-    ) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    ) -> Tuple[np.ndarray, np.ndarray]:
         """
         split and make train & test dataset
 
@@ -249,31 +258,18 @@ class Dataset(object):
             test labels (np.ndarray): testing labels
         """
 
-        split_point = int(self.ratio * len(dataset))
-        train_dataset = dataset[:split_point]
-        test_dataset = dataset[split_point:]
-
         train_feature, train_label = [], []
-        test_feature, test_label = [], []
 
-        for dataset in train_dataset:
+        for dataset in dataset:
             data = np.expand_dims(dataset["data"], axis=0)
             label = np.expand_dims(dataset["label"], axis=0)
             train_feature.append(data)
             train_label.append(label)
 
-        for dataset in test_dataset:
-            data = np.expand_dims(dataset["data"], axis=0)
-            label = np.expand_dims(dataset["label"], axis=0)
-            test_feature.append(data)
-            test_label.append(label)
-
         train_feature = np.concatenate(train_feature, axis=0)
         train_label = np.concatenate(train_label, axis=0)
-        test_feature = np.concatenate(test_feature, axis=0)
-        test_label = np.concatenate(test_label, axis=0)
 
-        return train_feature, train_label, test_feature, test_label
+        return train_feature, train_label
 
     def eval(self, filepath: str):
         """
