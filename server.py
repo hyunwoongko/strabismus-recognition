@@ -3,10 +3,12 @@ import warnings
 
 from flask import render_template, request
 from matplotlib import pyplot as plt
+from sklearn.ensemble import RandomForestClassifier
+
 from engine.dataset import Dataset
 from engine.model import Model
 
-warnings.filterwarnings(action='ignore', category=UserWarning)
+warnings.filterwarnings(action="ignore", category=UserWarning)
 
 
 class Server:
@@ -19,11 +21,11 @@ class Server:
         self.back_end()
 
     def front_end(self):
-        @self.app.route('/')
+        @self.app.route("/")
         def index():
             return render_template("index.html")
 
-        @self.app.route('/index')
+        @self.app.route("/index")
         def index_():
             return render_template("index.html")
 
@@ -69,10 +71,12 @@ class Server:
             f.save(filename)
 
             output_list, img_file_name = self.recognize(filename)
-            return render_template("result.html",
-                                   port=self.port,
-                                   output_list=output_list,
-                                   img_file_name=img_file_name)
+            return render_template(
+                "result.html",
+                port=self.port,
+                output_list=output_list,
+                img_file_name=img_file_name,
+            )
 
         return self.app
 
@@ -86,7 +90,11 @@ class Server:
 
         output_list = []
         for model_name in model_dir:
-            model = Model(model_dir="saved", model_id=model_name.replace(".pkl", ""))
+            model = Model(
+                model_dir="saved",
+                model_id=model_name.replace(".pkl", ""),
+                model=RandomForestClassifier(n_estimators=50),
+            )
             model.load()
             output = model.predict(dataset)[0]
             output_list.append(output)
@@ -96,7 +104,7 @@ class Server:
     def visualize(self, dataset, file_name):
         file_name = file_name.replace("cache", "static/cache")
         file_name = file_name.replace("csv", "jpg")
-        plt.plot(dataset, c='r')
+        plt.plot(dataset, c="r")
         plt.ylim(-200, 200)
         plt.title("Fixation Data Sequence")
         plt.xlabel("time step")
